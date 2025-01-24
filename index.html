@@ -17,12 +17,12 @@
             color: #e0e0e0;
             line-height: 1.8;
             overflow-x: hidden;
-            background-color: #1a1a1a;
+            background-color: #000000; /* Noir profond */
         }
 
         /* Glassmorphism Effect */
         .glass {
-            background: rgba(34, 34, 34, 0.8);
+            background: rgba(20, 20, 20, 0.9); /* Noir avec transparence */
             backdrop-filter: blur(15px);
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -47,7 +47,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 1.5rem 3rem;
-            background: rgba(26, 26, 26, 0.9);
+            background: rgba(0, 0, 0, 0.9); /* Noir profond */
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -56,7 +56,7 @@
         header .logo {
             font-size: 2.5rem;
             font-weight: bold;
-            color: #b8860b;
+            color: #b8860b; /* Or */
             font-family: 'Playfair Display', serif;
         }
 
@@ -69,8 +69,8 @@
         }
 
         header nav a:hover {
-            color: #b8860b;
-            border-bottom: 2px solid #b8860b;
+            color: #b8860b; /* Or */
+            border-bottom: 2px solid #b8860b; /* Or */
         }
 
         /* Hero Section */
@@ -88,7 +88,7 @@
             font-size: 5rem;
             font-family: 'Playfair Display', serif;
             margin-bottom: 1.5rem;
-            color: #b8860b;
+            color: #b8860b; /* Or */
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
         }
 
@@ -110,7 +110,7 @@
             font-size: 3.5rem;
             font-family: 'Playfair Display', serif;
             margin-bottom: 2rem;
-            color: #b8860b;
+            color: #b8860b; /* Or */
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
         }
 
@@ -132,7 +132,7 @@
             font-size: 3.5rem;
             font-family: 'Playfair Display', serif;
             margin-bottom: 3rem;
-            color: #b8860b;
+            color: #b8860b; /* Or */
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
         }
 
@@ -143,7 +143,7 @@
         }
 
         .product-card {
-            background: rgba(34, 34, 34, 0.8);
+            background: rgba(20, 20, 20, 0.9); /* Noir avec transparence */
             padding: 2rem;
             border-radius: 20px;
             text-align: center;
@@ -161,7 +161,7 @@
             font-size: 2rem;
             font-family: 'Playfair Display', serif;
             margin-bottom: 1rem;
-            color: #b8860b;
+            color: #b8860b; /* Or */
         }
 
         .product-card p {
@@ -174,7 +174,7 @@
         footer {
             padding: 3rem;
             text-align: center;
-            background: rgba(26, 26, 26, 0.9);
+            background: rgba(0, 0, 0, 0.9); /* Noir profond */
         }
 
         footer p {
@@ -207,6 +207,10 @@
 
             .about p, .product-card p {
                 font-size: 1.1rem;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             }
         }
     </style>
@@ -324,4 +328,4 @@
         });
     </script>
 </body>
-  </html>
+</html>
