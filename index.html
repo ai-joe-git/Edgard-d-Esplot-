@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edgard d'Esplot - L'Excellence du Vin de Bourgogne</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            color: #e0e0e0;
+            line-height: 1.8;
+            overflow-x: hidden;
+            background-color: #1a1a1a;
+        }
+
+        /* Glassmorphism Effect */
+        .glass {
+            background: rgba(34, 34, 34, 0.8);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2.5rem;
+            margin: 2rem;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        /* Smooth Transitions */
+        a, button, .product-card {
+            transition: all 0.4s ease;
+        }
+
+        a:hover, button:hover, .product-card:hover {
+            transform: translateY(-10px);
+            opacity: 0.9;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 3rem;
+            background: rgba(26, 26, 26, 0.9);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #b8860b;
+            font-family: 'Playfair Display', serif;
+        }
+
+        header nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        header nav a:hover {
+            color: #b8860b;
+            border-bottom: 2px solid #b8860b;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 2rem;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1.5rem;
+            color: #b8860b;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.8rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #e0e0e0;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 3.5rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 2rem;
+            color: #b8860b;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .about p {
+            font-size: 1.4rem;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 2;
+            color: #e0e0e0;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .products h2 {
+            font-size: 3.5rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 3rem;
+            color: #b8860b;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .product-card {
+            background: rgba(34, 34, 34, 0.8);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .product-card img {
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-card h3 {
+            font-size: 2rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+            color: #b8860b;
+        }
+
+        .product-card p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #e0e0e0;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem;
+            text-align: center;
+            background: rgba(26, 26, 26, 0.9);
+        }
+
+        footer p {
+            font-size: 1.2rem;
+            color: #e0e0e0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            header nav {
+                margin-top: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .hero p {
+                font-size: 1.4rem;
+            }
+
+            .about h2, .products h2 {
+                font-size: 2.5rem;
+            }
+
+            .about p, .product-card p {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="glass">
+        <div class="logo">Edgard d'Esplot</div>
+        <nav>
+            <a href="#about">À Propos</a>
+            <a href="#products">Nos Vins</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="glass">
+            <h1>L'Excellence du Vin de Bourgogne</h1>
+            <p>Depuis des générations, la famille Benahmou incarne l'art de la viticulture. Découvrez des vins d'exception, nés de la passion et du savoir-faire ancestral.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="glass">
+            <h2>Notre Héritage</h2>
+            <p>Edgard d'Esplot, c'est l'histoire d'une famille passionnée par le vin. Gary Benahmou, héritier de cette tradition, perpétue l'excellence à travers des crus raffinés, élaborés avec soin dans les vignobles de Bourgogne. Chaque bouteille est une invitation à découvrir l'authenticité et l'élégance d'un terroir exceptionnel.</p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="glass">
+            <h2>Nos Créations</h2>
+            <div class="product-grid">
+                <!-- Chablis 2022 -->
+                <div class="product-card">
+                    <img src="comptoir_des_vins_de_bourgogne-01.jpg" alt="Chablis 2022">
+                    <h3>Chablis 2022</h3>
+                    <p>Un vin blanc raffiné, aux arômes de fruits exotiques et de vanille, parfait pour accompagner vos moments de convivialité.</p>
+                </div>
+                <!-- Meursault 2015 -->
+                <div class="product-card">
+                    <img src="comptoir_des_vins_de_bourgogne-02.jpg" alt="Meursault 2015">
+                    <h3>Meursault 2015</h3>
+                    <p>Un vin blanc complexe, aux notes de beurre et de noisette, idéal pour les amateurs de grands crus.</p>
+                </div>
+                <!-- Fixin 2022 -->
+                <div class="product-card">
+                    <img src="comptoir_des_vins_de_bourgogne-04.jpg" alt="Fixin 2022">
+                    <h3>Fixin 2022</h3>
+                    <p>Un vin rouge puissant, aux arômes de fruits rouges et d'épices, parfait pour les repas gastronomiques.</p>
+                </div>
+                <!-- Chorey-les-Beaune 2021 -->
+                <div class="product-card">
+                    <img src="comptoir_des_vins_de_bourgogne-06.jpg" alt="Chorey-les-Beaune 2021">
+                    <h3>Chorey-les-Beaune 2021</h3>
+                    <p>Un vin rouge élégant, aux notes de cerise et de violette, idéal pour les soirées d'été.</p>
+                </div>
+                <!-- Les Sarments de Sarah 2022 -->
+                <div class="product-card">
+                    <img src="comptoir_des_vins_de_bourgogne-08.jpg" alt="Les Sarments de Sarah 2022">
+                    <h3>Les Sarments de Sarah 2022</h3>
+                    <p>Un vin rouge fruité, aux arômes de framboise et de réglisse, parfait pour les moments de détente.</p>
+                </div>
+                <!-- Saint-Romain 2018 -->
+                <div class="product-card">
+                    <img src="comptoir_des_vins_de_bourgogne-10.jpg" alt="Saint-Romain 2018">
+                    <h3>Saint-Romain 2018</h3>
+                    <p>Un vin blanc frais, aux notes d'agrumes et de fleurs blanches, idéal pour les apéritifs.</p>
+                </div>
+                <!-- Nuits-Saint-Georges 2020 -->
+                <div class="product-card">
+                    <img src="comptoir_des_vins_de_bourgogne-12.jpg" alt="Nuits-Saint-Georges 2020">
+                    <h3>Nuits-Saint-Georges 2020</h3>
+                    <p>Un vin rouge structuré, aux arômes de fruits noirs et de cuir, parfait pour les repas d'exception.</p>
+                </div>
+                <!-- Gevrey-Chambertin 2021 -->
+                <div class="product-card">
+                    <img src="comptoir_des_vins_de_bourgogne-20.jpg" alt="Gevrey-Chambertin 2021">
+                    <h3>Gevrey-Chambertin 2021</h3>
+                    <p>Un vin rouge puissant, aux notes de cerise noire et de réglisse, idéal pour les amateurs de grands crus.</p>
+                </div>
+                <!-- Les Sarments d'Ella 2021 -->
+                <div class="product-card">
+                    <img src="comptoir_des_vins_de_bourgogne-22.jpg" alt="Les Sarments d'Ella 2021">
+                    <h3>Les Sarments d'Ella 2021</h3>
+                    <p>Un vin blanc frais, aux arômes de pêche et de fleurs blanches, parfait pour les soirées estivales.</p>
+                </div>
+                <!-- Savigny-les-Beaune 2022 -->
+                <div class="product-card">
+                    <img src="comptoir_des_vins_de_bourgogne-26.jpg" alt="Savigny-les-Beaune 2022">
+                    <h3>Savigny-les-Beaune 2022</h3>
+                    <p>Un vin rouge élégant, aux notes de fruits rouges et d'épices, idéal pour les repas gastronomiques.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="glass">
+        <p>&copy; 2023 Edgard d'Esplot. Tous droits réservés.</p>
+    </footer>
+
+    <!-- JavaScript for Smooth Scrolling -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+  </html>
