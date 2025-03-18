@@ -1,469 +1,1188 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edgard d'Esplot - L'Excellence du Vin de Bourgogne</title>
-    <style>
-        /* Reset CSS */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<!DOCTYPE html> <html lang="fr"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Edgar d'Esplot - Caviste d'Exception</title> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <style> /* Variables et réinitialisation */ :root { --primary-color: #6d071a; /* Bordeaux profond */ --secondary-color: #c8a87d; /* Or/doré */ --dark-color: #1a1a1a; /* Noir riche */ --light-color: #f5f5f0; /* Blanc crème */ --glass-bg: rgba(255, 255, 255, 0.15); --glass-border: rgba(255, 255, 255, 0.2); --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); }
+text
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Georgia', serif;
-            color: #e0e0e0;
-            line-height: 1.8;
-            overflow-x: hidden;
-            background-color: #000000; /* Noir profond */
-        }
+    html {
+        scroll-behavior: smooth;
+    }
 
-        /* Glassmorphism Effect */
-        .glass {
-            background: rgba(20, 20, 20, 0.9); /* Noir avec transparence */
-            backdrop-filter: blur(15px);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            margin: 1rem;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
-        }
+    body {
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        line-height: 1.6;
+        color: var(--dark-color);
+        background-color: var(--light-color);
+        overflow-x: hidden;
+    }
 
-        /* Smooth Transitions */
-        a, button, .product-card {
-            transition: all 0.4s ease;
-        }
+    /* Typographie */
+    h1, h2, h3, h4 {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
 
-        a:hover, button:hover, .product-card:hover {
-            transform: translateY(-10px);
-            opacity: 0.9;
-        }
+    h1 {
+        font-size: 3.5rem;
+    }
 
-        /* Header */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-            background: rgba(0, 0, 0, 0.9); /* Noir profond */
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+    h2 {
+        font-size: 2.5rem;
+        position: relative;
+        margin-bottom: 2rem;
+    }
 
-        header .logo {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #b8860b; /* Or */
-            font-family: 'Playfair Display', serif;
-        }
+    h2::after {
+        content: '';
+        position: absolute;
+        width: 80px;
+        height: 3px;
+        background-color: var(--secondary-color);
+        bottom: -10px;
+        left: 0;
+    }
 
-        header nav {
-            display: flex;
-            align-items: center;
-        }
+    p {
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+    }
 
-        header nav a {
-            color: #e0e0e0;
-            text-decoration: none;
-            margin: 0 1rem;
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
+    /* Navigation */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background: rgba(26, 26, 26, 0.7);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        padding: 1rem 0;
+        transition: all 0.3s ease;
+    }
 
-        header nav a:hover {
-            color: #b8860b; /* Or */
-            border-bottom: 2px solid #b8860b; /* Or */
-        }
+    .navbar.scrolled {
+        padding: 0.5rem 0;
+        background: rgba(26, 26, 26, 0.95);
+    }
 
-        /* Menu Burger pour mobile */
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 
-        .menu-toggle span {
-            height: 3px;
-            width: 25px;
-            background-color: #b8860b; /* Or */
-            margin: 4px;
-            border-radius: 2px;
-        }
+    .nav-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 1rem;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
-        }
+    .logo {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 1.8rem;
+        color: var(--light-color);
+        text-decoration: none;
+        transition: color 0.3s;
+    }
 
-        .hero h1 {
+    .logo:hover {
+        color: var(--secondary-color);
+    }
+
+    .nav-links {
+        display: flex;
+        list-style: none;
+    }
+
+    .nav-links li {
+        margin-left: 2rem;
+    }
+
+    .nav-links a {
+        color: var(--light-color);
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: all 0.3s;
+        padding: 0.5rem 0;
+        position: relative;
+    }
+
+    .nav-links a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background-color: var(--secondary-color);
+        bottom: 0;
+        left: 0;
+        transition: width 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: var(--secondary-color);
+    }
+
+    .nav-links a:hover::after {
+        width: 100%;
+    }
+
+    .burger {
+        display: none;
+        cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+        height: 100vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1506377295352-e3154d43ea9e?auto=format&fit=crop&q=80') no-repeat center center/cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .hero-content {
+        text-align: center;
+        color: var(--light-color);
+        max-width: 800px;
+        padding: 2rem;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(5px);
+        border-radius: 10px;
+        animation: fadeIn 1.5s ease-out;
+    }
+
+    .hero-content h1 {
+        margin-bottom: 1.5rem;
+        font-size: 4rem;
+    }
+
+    .hero-content p {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 0.8rem 1.8rem;
+        background-color: var(--secondary-color);
+        color: var(--dark-color);
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: 500;
+        transition: all 0.3s;
+        border: 2px solid var(--secondary-color);
+    }
+
+    .btn:hover {
+        background-color: transparent;
+        color: var(--secondary-color);
+    }
+
+    .scroll-down {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: bounce 2s infinite;
+    }
+
+    .scroll-down i {
+        color: var(--light-color);
+        font-size: 2rem;
+    }
+
+    /* About Section */
+    .about {
+        padding: 6rem 0;
+        background-color: var(--light-color);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .about::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('https://images.unsplash.com/photo-1528823872057-9c018a7a7553?auto=format&fit=crop&q=80') no-repeat right center/contain;
+        opacity: 0.05;
+        z-index: 0;
+    }
+
+    .about-content {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+
+    .about-text {
+        padding-right: 2rem;
+    }
+
+    .about-image {
+        position: relative;
+    }
+
+    .glass-card {
+        background: var(--glass-bg);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 15px;
+        border: 1px solid var(--glass-border);
+        box-shadow: var(--glass-shadow);
+        padding: 2rem;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .glass-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .image-container {
+        width: 100%;
+        height: 450px;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: var(--glass-shadow);
+    }
+
+    .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+    }
+
+    .image-container:hover img {
+        transform: scale(1.05);
+    }
+
+    .quote-card {
+        position: absolute;
+        bottom: -30px;
+        right: -30px;
+        width: 300px;
+        padding: 1.5rem;
+        background: var(--primary-color);
+        color: var(--light-color);
+        border-radius: 10px;
+        transform: rotate(-2deg);
+        z-index: 2;
+    }
+
+    .quote-card p {
+        font-style: italic;
+        font-size: 1rem;
+    }
+
+    .quote-card .author {
+        text-align: right;
+        font-weight: 600;
+        margin-top: 1rem;
+    }
+
+    /* Collections Section */
+    .collections {
+        padding: 6rem 0;
+        background-color: var(--dark-color);
+        color: var(--light-color);
+    }
+
+    .collections h2 {
+        color: var(--light-color);
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .collections h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .wine-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .wine-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border-radius: 10px;
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+        height: 100%;
+    }
+
+    .wine-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .wine-img {
+        height: 250px;
+        overflow: hidden;
+    }
+
+    .wine-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+    }
+
+    .wine-card:hover .wine-img img {
+        transform: scale(1.1);
+    }
+
+    .wine-info {
+        padding: 1.5rem;
+    }
+
+    .wine-info h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: var(--secondary-color);
+    }
+
+    .wine-meta {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    .wine-desc {
+        margin-bottom: 1.5rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .wine-price {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--secondary-color);
+    }
+
+    /* Expertise Section */
+    .expertise {
+        padding: 6rem 0;
+        background-color: var(--light-color);
+    }
+
+    .expertise-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+    }
+
+    .expertise-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .expertise-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .expertise-card {
+        background: var(--glass-bg);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border-radius: 10px;
+        border: 1px solid var(--glass-border);
+        padding: 1.5rem;
+        transition: transform 0.3s;
+        height: 220px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .expertise-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .expertise-card i {
+        font-size: 2rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+
+    .expertise-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .expertise-card p {
+        font-size: 0.95rem;
+        margin-bottom: 0;
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+        padding: 6rem 0;
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1569529465841-dfecdab7503b?auto=format&fit=crop&q=80') no-repeat center center/cover;
+        color: var(--light-color);
+        position: relative;
+    }
+
+    .testimonials h2 {
+        text-align: center;
+        color: var(--light-color);
+        margin-bottom: 3rem;
+    }
+
+    .testimonials h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .testimonial-container {
+        max-width: 800px;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .testimonial-slider {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    .testimonial {
+        min-width: 100%;
+        padding: 0 20px;
+    }
+
+    .testimonial-content {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border-radius: 15px;
+        padding: 2rem;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .testimonial-text {
+        font-size: 1.1rem;
+        font-style: italic;
+        margin-bottom: 1.5rem;
+    }
+
+    .testimonial-author {
+        font-weight: 600;
+        color: var(--secondary-color);
+    }
+
+    .testimonial-buttons {
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+    }
+
+    .testimonial-btn {
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin: 0 10px;
+        cursor: pointer;
+        transition: background 0.3s;
+        color: var(--light-color);
+        font-size: 1rem;
+    }
+
+    .testimonial-btn:hover {
+        background: var(--secondary-color);
+        color: var(--dark-color);
+    }
+
+    /* Contact Section */
+    .contact {
+        padding: 6rem 0;
+        background-color: var(--dark-color);
+        color: var(--light-color);
+    }
+
+    .contact h2 {
+        text-align: center;
+        color: var(--light-color);
+        margin-bottom: 3rem;
+    }
+
+    .contact h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .contact-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-item i {
+        font-size: 1.5rem;
+        color: var(--secondary-color);
+        margin-right: 1rem;
+        margin-top: 0.2rem;
+    }
+
+    .contact-text h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .contact-text p {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .map {
+        width: 100%;
+        height: 300px;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-top: 2rem;
+    }
+
+    .map iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    .contact-form {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 2rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 0.8rem;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 5px;
+        color: var(--light-color);
+        font-size: 1rem;
+        transition: border-color 0.3s;
+    }
+
+    .form-control:focus {
+        outline: none;
+        border-color: var(--secondary-color);
+    }
+
+    textarea.form-control {
+        resize: vertical;
+        min-height: 120px;
+    }
+
+    /* Footer */
+    .footer {
+        background-color: #0f0f0f;
+        padding: 3rem 0 1rem;
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .footer-about h3 {
+        color: var(--light-color);
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .footer-about p {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .social-links {
+        display: flex;
+    }
+
+    .social-links a {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--light-color);
+        margin-right: 0.8rem;
+        transition: all 0.3s;
+    }
+
+    .social-links a:hover {
+        background-color: var(--secondary-color);
+        color: var(--dark-color);
+        transform: translateY(-3px);
+    }
+
+    .footer-links h3 {
+        color: var(--light-color);
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .footer-links ul {
+        list-style: none;
+    }
+
+    .footer-links li {
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+        color: var(--secondary-color);
+    }
+
+    .copyright {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 0.9rem;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0) translateX(-50%);
+        }
+        40% {
+            transform: translateY(-20px) translateX(-50%);
+        }
+        60% {
+            transform: translateY(-10px) translateX(-50%);
+        }
+    }
+
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 992px) {
+        h1 {
             font-size: 3rem;
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 1rem;
-            color: #b8860b; /* Or */
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
         }
-
-        .hero p {
-            font-size: 1.4rem;
-            max-width: 800px;
-            margin: 0 auto;
-            color: #e0e0e0;
-            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+        h2 {
+            font-size: 2.2rem;
         }
-
-        /* About Section */
-        .about {
-            padding: 4rem 1rem;
-            text-align: center;
-        }
-
-        .about h2 {
-            font-size: 2.5rem;
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 1.5rem;
-            color: #b8860b; /* Or */
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .about p {
-            font-size: 1.2rem;
-            max-width: 900px;
-            margin: 0 auto;
-            line-height: 2;
-            color: #e0e0e0;
-        }
-
-        /* Products Section */
-        .products {
-            padding: 4rem 1rem;
-            text-align: center;
-        }
-
-        .products h2 {
-            font-size: 2.5rem;
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 2rem;
-            color: #b8860b; /* Or */
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        .about-content, 
+        .expertise-content, 
+        .contact-content,
+        .footer-content {
+            grid-template-columns: 1fr;
             gap: 2rem;
         }
-
-        .product-card {
-            background: rgba(20, 20, 20, 0.9); /* Noir avec transparence */
-            padding: 1.5rem;
-            border-radius: 20px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .product-card img {
+        .quote-card {
+            position: relative;
+            bottom: 0;
+            right: 0;
             width: 100%;
-            border-radius: 15px;
-            margin-bottom: 1rem;
+            margin-top: 1.5rem;
         }
-
-        .product-card h3 {
-            font-size: 1.5rem;
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 0.5rem;
-            color: #b8860b; /* Or */
+        .expertise-cards {
+            margin-top: 1rem;
         }
+    }
 
-        .product-card p {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: #e0e0e0;
+    @media screen and (max-width: 768px) {
+        .container {
+            width: 95%;
         }
-
-        /* Footer */
-        footer {
-            padding: 2rem;
-            text-align: center;
-            background: rgba(0, 0, 0, 0.9); /* Noir profond */
+        .nav-links {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            background-color: var(--dark-color);
+            height: 100vh;
+            width: 70%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: right 0.5s;
+            z-index: 999;
         }
-
-        footer p {
-            font-size: 1rem;
-            color: #e0e0e0;
+        .nav-links.show {
+            right: 0;
         }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header {
-                padding: 1rem;
-            }
-
-            header nav {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                background: rgba(0, 0, 0, 0.9);
-                position: absolute;
-                top: 60px;
-                left: 0;
-                padding: 1rem;
-            }
-
-            header nav.active {
-                display: flex;
-            }
-
-            header nav a {
-                margin: 1rem 0;
-                text-align: center;
-            }
-
-            .menu-toggle {
-                display: flex;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.2rem;
-            }
-
-            .about h2, .products h2 {
-                font-size: 2rem;
-            }
-
-            .about p, .product-card p {
-                font-size: 1rem;
-            }
-
-            .product-grid {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            }
+        .nav-links li {
+            margin: 1.5rem 0;
         }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header class="glass">
-        <div class="logo">Edgard d'Esplot</div>
-        <div class="menu-toggle" id="mobile-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <nav id="nav-menu">
-            <a href="#about">À Propos</a>
-            <a href="#products">Nos Vins</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+        .burger {
+            display: block;
+            z-index: 1000;
+        }
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background-color: var(--light-color);
+            margin: 5px;
+            transition: all 0.3s;
+        }
+        .burger.active div:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        .burger.active div:nth-child(2) {
+            opacity: 0;
+        }
+        .burger.active div:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+        .hero-content h1 {
+            font-size: 3rem;
+        }
+        .hero-content p {
+            font-size: 1.1rem;
+        }
+        .expertise-cards {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+</head> <body> <!-- Navigation --> <nav class="navbar"> <div class="container"> <div class="nav-content"> <a href="#" class="logo">Edgar d'Esplot</a> <ul class="nav-links"> <li><a href="#about">Notre Histoire</a></li> <li><a href="#collections">Nos Vins</a></li> <li><a href="#expertise">Expertise</a></li> <li><a href="#testimonials">Témoignages</a></li> <li><a href="#contact">Contact</a></li> </ul> <div class="burger"> <div></div> <div></div> <div></div> </div> </div> </div> </nav>
+text
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Edgar d'Esplot</h1>
+        <p>Caviste d'exception depuis 1897, gardien des trésors viticoles et ambassadeur de la tradition française.</p>
+        <a href="#collections" class="btn">Découvrir nos vins</a>
+    </div>
+    <div class="scroll-down">
+        <i class="fas fa-chevron-down"></i>
+    </div>
+</section>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="glass">
-            <h1>L'Excellence du Vin de Bourgogne</h1>
-            <p>Depuis des générations, la famille Benahmou incarne l'art de la viticulture. Découvrez des vins d'exception, nés de la passion et du savoir-faire ancestral.</p>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="glass">
-            <h2>Notre Héritage</h2>
-            <p>Edgard d'Esplot, c'est l'histoire d'une famille passionnée par le vin. Gary Benahmou, héritier de cette tradition, perpétue l'excellence à travers des crus raffinés, élaborés avec soin dans les vignobles de Bourgogne. Chaque bouteille est une invitation à découvrir l'authenticité et l'élégance d'un terroir exceptionnel.</p>
-        </div>
-    </section>
-
-    <!-- Products Section -->
-    <section id="products" class="products">
-        <div class="glass">
-            <h2>Nos Créations</h2>
-            <div class="product-grid">
-                <!-- Intégration des 31 vins -->
-                <div class="product-card">
-                    <img src="comptoir_des_vins_de_bourgogne-01.jpg" alt="Chablis 2022">
-                    <h3>Chablis 2022</h3>
-                    <p>Un vin blanc raffiné, aux arômes de fruits exotiques et de vanille, parfait pour accompagner vos moments de convivialité.</p>
+<!-- About Section -->
+<section id="about" class="about">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-text fade-in">
+                <h2>Notre Histoire</h2>
+                <p>Fondée en 1897 par Edgar d'Esplot, notre maison s'est construite sur une passion inébranlable pour les grands vins. Visionnaire et passionné, Edgar a parcouru les plus beaux terroirs de France pour dénicher des crus d'exception et créer une collection sans pareille.</p>
+                <p>Depuis cinq générations, la famille d'Esplot perpétue cet héritage avec la même exigence et le même amour du vin. Nous sélectionnons personnellement chaque bouteille qui entre dans notre cave, tissant des liens privilégiés avec les vignerons les plus talentueux.</p>
+                <p>Notre philosophie repose sur trois piliers fondamentaux : l'authenticité des terroirs, le respect du travail des vignerons et le partage de notre passion. Chez Edgar d'Esplot, nous ne vendons pas simplement du vin, nous transmettons des histoires, des émotions et un savoir-faire séculaire.</p>
+                <p>Aujourd'hui, notre cave abrite plus de 1200 références soigneusement sélectionnées, des grands classiques aux découvertes les plus confidentielles, pour le plaisir des amateurs comme des connaisseurs.</p>
+            </div>
+            <div class="about-image fade-in">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?auto=format&fit=crop&q=80" alt="Cave à vin Edgar d'Esplot">
                 </div>
-                <div class="product-card">
-                    <img src="comptoir_des_vins_de_bourgogne-02.jpg" alt="Meursault 2015">
-                    <h3>Meursault 2015</h3>
-                    <p>Un vin blanc complexe, aux notes de beurre et de noisette, idéal pour les amateurs de grands crus.</p>
-                </div>
-                <div class="product-card">
-                    <img src="comptoir_des_vins_de_bourgogne-03.jpg" alt="Savigny-les-Beaune 1er Cru">
-                    <h3>Savigny-les-Beaune 1er Cru</h3>
-                    <p>Un vin rouge élégant, aux arômes de fruits rouges et d'épices, parfait pour les repas gastronomiques.</p>
-                </div>
-                <div class="product-card">
-                    <img src="comptoir_des_vins_de_bourgogne-04.jpg" alt="Fixin 2022">
-                    <h3>Fixin 2022</h3>
-                    <p>Un vin rouge puissant, aux arômes de fruits rouges et d'épices, parfait pour les repas gastronomiques.</p>
-                </div>
-                <div class="product-card">
-                    <img src="comptoir_des_vins_de_bourgogne-05.jpg" alt="Fixin">
-                    <h3>Fixin</h3>
-                    <p>Un vin rouge robuste, aux notes de fruits noirs et de cuir, idéal pour les amateurs de vins corsés.</p>
-                </div>
-                <div class="product-card">
-                    <img src="comptoir_des_vins_de_bourgogne-06.jpg" alt="Chorey-les-Beaune 2021">
-                    <h3>Chorey-les-Beaune 2021</h3>
-                    <p>Un vin rouge élégant, aux notes de cerise et de violette, idéal pour les soirées d'été.</p>
-                </div>
-                <div class="product-card">
-                    <img src="comptoir_des_vins_de_bourgogne-07.jpg" alt="Chorey-les-Beaune">
-                    <h3>Chorey-les-Beaune</h3>
-                    <p>Un vin rouge fruité, aux arômes de framboise et de réglisse, parfait pour les moments de détente.</p>
-                </div>
-                <div class="product-card">
-                    <img src="comptoir_des_vins_de_bourgogne-08.jpg" alt="Les Sarments de Sarah 2022">
-                    <h3>Les Sarments de Sarah 2022</h3>
-                    <p>Un vin rouge fruité, aux arômes de framboise et de réglisse, parfait pour les moments de détente.</p>
-                </div>
-                <div class="product-card">
-                    <img src="comptoir_des_vins_de_bourgogne-09.jpg" alt="Les Sarments de Sarah">
-                    <h3>Les Sarments de Sarah</h3>
-                    <p>Un vin rouge complexe, aux notes de fruits rouges et d'épices, parfait pour les repas gastronomiques.</p>
-                </div>
-                <div class="product-card">
-                    <img src="comptoir_des_vins_de_bourgogne-10.jpg" alt="Saint-Romain 2018">
-                    <h3>Saint-Romain 2018</h3>
-                    <p>Un vin blanc frais, aux notes d'agrumes et de fleurs blanches, idéal pour les apéritifs.</p>
-                </div>
-                <div class="product-card">
-                    <img src="comptoir_des_vins_de_bourgogne-11.jpg" alt="Saint-Romain">
-                    <h3>Saint-Romain</h3>
-                    <p>Un vin blanc raffiné, aux arômes de fruits exotiques et de vanille, parfait pour accompagner vos moments de convivialité.</p>
-                </div>
-                <div class="product-card">
-                    <img src="comptoir_des_vins_de_bourgogne-12.jpg" alt="Nuits-Saint-Georges 2020">
-                    <h3>Nuits-Saint-Georges 2020</h3>
-                    <p>Un vin rouge structuré, aux arômes de fruits noirs et de cuir, parfait pour les repas d'exception.</p>
-                </div>
-                <div class="product-card">
-                    <img src="comptoir_des_vins_de_bourgogne-13.jpg" alt="Nuits-Saint-Georges">
-                    <h3>Nuits-Saint-Georges</h3>
-                    <p>Un vin rouge puissant, aux notes de cerise noire et de réglisse, idéal pour les amateurs de grands crus.</p>
-                </div>
-                <div class="product-card">
-                    <img src="comptoir_des_vins_de_bourgogne-14.jpg" alt="Saint-Romain 2019">
-                    <h3>Saint-Romain 2019</h3>
-                    <p>Un vin blanc frais, aux notes d'agrumes et de fleurs blanches, idéal pour les apéritifs.</p>
-                </div>
-                <div class="product-card">
-                    <img src="comptoir_des_vins_de_bourgogne-15.jpg" alt="Saint-Romain">
-                    <h3>Saint-Romain</h3>
-                    <p>Un vin blanc raffiné, aux arômes de fruits exotiques et de vanille, parfait pour accompagner vos moments de convivialité.</p>
-                </div>
-                <div class="product-card">
-                    <img src="comptoir_des_vins_de_bourgogne-16.jpg" alt="Chablis 2022">
-                    <h3>Chablis 2022</h3>
-                    <p>Un vin blanc raffiné, aux arômes de fruits exotiques et de vanille, parfait pour accompagner vos moments de convivialité.</p>
-                </div>
-                <div class="product-card">
-                    <img src="comptoir_des_vins_de_bourgogne-17.jpg" alt="Chablis">
-                    <h3>Chablis</h3>
-                    <p>Un vin blanc complexe, aux notes de beurre et de noisette, idéal pour les amateurs de grands crus.</p>
-                </div>
-                <div class="product-card">
-                    <img src="comptoir_des_vins_de_bourgogne-18.jpg" alt="Monthelie 1er Cru">
-                    <h3>Monthelie 1er Cru</h3>
-                    <p>Un vin rouge élégant, aux arômes de fruits rouges et d'épices, parfait pour les repas gastronomiques.</p>
-                </div>
-                <div class="product-card">
-                    <img src="comptoir_des_vins_de_bourgogne-19.jpg" alt="Monthelie 1er Cru Les Vignes Rondes">
-                    <h3>Monthelie 1er Cru Les Vignes Rondes</h3>
-                    <p>Un vin rouge robuste, aux notes de fruits noirs et de cuir, idéal pour les amateurs de vins corsés.</p>
-                </div>
-                <div class="product-card">
-                    <img src="comptoir_des_vins_de_bourgogne-20.jpg" alt="Gevrey-Chambertin 2021">
-                    <h3>Gevrey-Chambertin 2021</h3>
-                    <p>Un vin rouge puissant, aux notes de cerise noire et de réglisse, idéal pour les amateurs de grands crus.</p>
-                </div>
-                <div class="product-card">
-                    <img src="comptoir_des_vins_de_bourgogne-21.jpg" alt="Gevrey-Chambertin">
-                    <h3>Gevrey-Chambertin</h3>
-                    <p>Un vin rouge structuré, aux arômes de fruits noirs et de cuir, parfait pour les repas d'exception.</p>
-                </div>
-                <div class="product-card">
-                    <img src="comptoir_des_vins_de_bourgogne-22.jpg" alt="Les Sarments d'Ella 2021">
-                    <h3>Les Sarments d'Ella 2021</h3>
-                    <p>Un vin blanc frais, aux arômes de pêche et de fleurs blanches, parfait pour les soirées estivales.</p>
-                </div>
-                <div class="product-card">
-                    <img src="comptoir_des_vins_de_bourgogne-23.jpg" alt="Les Sarments d'Ella">
-                    <h3>Les Sarments d'Ella</h3>
-                    <p>Un vin blanc raffiné, aux arômes de fruits exotiques et de vanille, parfait pour accompagner vos moments de convivialité.</p>
-                </div>
-                <div class="product-card">
-                    <img src="comptoir_des_vins_de_bourgogne-24.jpg" alt="Les Sarments d'Ella 2021">
-                    <h3>Les Sarments d'Ella 2021</h3>
-                    <p>Un vin blanc frais, aux arômes de pêche et de fleurs blanches, parfait pour les soirées estivales.</p>
-                </div>
-                <div class="product-card">
-                    <img src="comptoir_des_vins_de_bourgogne-25.jpg" alt="Les Sarments d'Ella">
-                    <h3>Les Sarments d'Ella</h3>
-                    <p>Un vin blanc raffiné, aux arômes de fruits exotiques et de vanille, parfait pour accompagner vos moments de convivialité.</p>
-                </div>
-                <div class="product-card">
-                    <img src="comptoir_des_vins_de_bourgogne-26.jpg" alt="Savigny-les-Beaune 2022">
-                    <h3>Savigny-les-Beaune 2022</h3>
-                    <p>Un vin rouge élégant, aux notes de fruits rouges et d'épices, idéal pour les repas gastronomiques.</p>
-                </div>
-                <div class="product-card">
-                    <img src="comptoir_des_vins_de_bourgogne-27.jpg" alt="Savigny-les-Beaune">
-                    <h3>Savigny-les-Beaune</h3>
-                    <p>Un vin rouge fruité, aux arômes de framboise et de réglisse, parfait pour les moments de détente.</p>
-                </div>
-                <div class="product-card">
-                    <img src="comptoir_des_vins_de_bourgogne-28.jpg" alt="Savigny-les-Beaune 2017">
-                    <h3>Savigny-les-Beaune 2017</h3>
-                    <p>Un vin rouge élégant, aux notes de cerise et de violette, idéal pour les soirées d'été.</p>
-                </div>
-                <div class="product-card">
-                    <img src="comptoir_des_vins_de_bourgogne-29.jpg" alt="Savigny-les-Beaune 1er Cru">
-                    <h3>Savigny-les-Beaune 1er Cru</h3>
-                    <p>Un vin rouge robuste, aux notes de fruits noirs et de cuir, idéal pour les amateurs de vins corsés.</p>
-                </div>
-                <div class="product-card">
-                    <img src="comptoir_des_vins_de_bourgogne-30.jpg" alt="Beaune 1er Cru">
-                    <h3>Beaune 1er Cru</h3>
-                    <p>Un vin rouge puissant, aux arômes de fruits rouges et d'épices, parfait pour les repas gastronomiques.</p>
-                </div>
-                <div class="product-card">
-                    <img src="comptoir_des_vins_de_bourgogne-31.jpg" alt="Pommard">
-                    <h3>Pommard</h3>
-                    <p>Un vin rouge structuré, aux arômes de fruits noirs et de cuir, parfait pour les repas d'exception.</p>
+                <div class="quote-card">
+                    <p>"Un grand vin n'est pas le travail d'un homme, mais le résultat d'une constante et raffinée tradition."</p>
+                    <div class="author">- Edgar d'Esplot, 1903</div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="glass">
-        <p>&copy; 2023 Edgard d'Esplot. Tous droits réservés.</p>
-    </footer>
+<!-- Collections Section -->
+<section id="collections" class="collections">
+    <div class="container">
+        <h2>Nos Sélections</h2>
+        <div class="wine-grid">
+            <div class="wine-card fade-in">
+                <div class="wine-img">
+                    <img src="https://images.unsplash.com/photo-1516594798897-2101a7b25350?auto=format&fit=crop&q=80" alt="Grands Bordeaux">
+                </div>
+                <div class="wine-info">
+                    <h3>Grands Bordeaux</h3>
+                    <div class="wine-meta">
+                        <span>Région: Bordeaux</span>
+                        <span>Depuis 1897</span>
+                    </div>
+                    <div class="wine-desc">
+                        Notre collection de Grands Bordeaux rassemble les plus prestigieux châteaux et les millésimes d'exception. Des Médoc puissants aux Saint-Émilion élégants, en passant par les Pomerol veloutés, nous vous proposons un voyage à travers l'histoire viticole bordelaise.
+                    </div>
+                    <div class="wine-price">De 35€ à 2500€</div>
+                </div>
+            </div>
+            
+            <div class="wine-card fade-in">
+                <div class="wine-img">
+                    <img src="https://images.unsplash.com/photo-1566331725064-efa4cc99abd9?auto=format&fit=crop&q=80" alt="Trésors de Bourgogne">
+                </div>
+                <div class="wine-info">
+                    <h3>Trésors de Bourgogne</h3>
+                    <div class="wine-meta">
+                        <span>Région: Bourgogne</span>
+                        <span>Parcelles rares</span>
+                    </div>
+                    <div class="wine-desc">
+                        Découvrez notre sélection minutieuse de grands crus et premiers crus bourguignons. Des Côte de Nuits racés aux Côte de Beaune délicats, ces vins incarnent la quintessence du terroir et du savoir-faire bourguignon.
+                    </div>
+                    <div class="wine-price">De 45€ à 3800€</div>
+                </div>
+            </div>
+            
+            <div class="wine-card fade-in">
+                <div class="wine-img">
+                    <img src="https://images.unsplash.com/photo-1547595628-c61a29f496f0?auto=format&fit=crop&q=80" alt="Pépites Confidentielles">
+                </div>
+                <div class="wine-info">
+                    <h3>Pépites Confidentielles</h3>
+                    <div class="wine-meta">
+                        <span>Toutes régions</span>
+                        <span>Édition limitée</span>
+                    </div>
+                    <div class="wine-desc">
+                        Notre passion nous pousse sans cesse à explorer les domaines moins connus pour vous proposer des découvertes exceptionnelles. Talents émergents, micro-cuvées, vins de garage... des trésors à prix accessibles qui surprendront les amateurs les plus exigeants.
+                    </div>
+                    <div class="wine-price">De 18€ à 65€</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <!-- JavaScript pour le menu mobile -->
-    <script>
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navMenu = document.getElementById('nav-menu');
+<!-- Expertise Section -->
+<section id="expertise" class="expertise">
+    <div class="container">
+        <div class="expertise-content">
+            <div class="expertise-text fade-in">
+                <h2>Notre Expertise</h2>
+                <p>Chez Edgar d'Esplot, l'excellence n'est pas qu'une ambition, c'est une exigence quotidienne. Notre équipe de sommeliers et d'experts vous accompagne avec passion et professionnalisme pour vous conseiller et vous aider à découvrir des vins qui correspondent parfaitement à vos goûts et à vos attentes.</p>
+                <p>Que vous soyez novice ou grand connaisseur, nous mettons notre savoir-faire à votre service pour vous guider dans le monde fascinant du vin, partager nos connaissances et vous faire vivre des expériences gustatives inoubliables.</p>
+            </div>
+            <div class="expertise-cards">
+                <div class="expertise-card glass-card fade-in">
+                    <i class="fas fa-wine-glass-alt"></i>
+                    <h3>Dégustation privée</h3>
+                    <p>Organisez des séances de dégustation personnalisées dans notre cave, guidées par nos experts sommeliers.</p>
+                </div>
+                <div class="expertise-card glass-card fade-in">
+                    <i class="fas fa-box"></i>
+                    <h3>Conservation optimale</h3>
+                    <p>Nos caves climatisées garantissent des conditions parfaites pour la maturation et la garde de nos vins.</p>
+                </div>
+                <div class="expertise-card glass-card fade-in">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h3>Livraison spécialisée</h3>
+                    <p>Service de livraison sécurisé préservant l'intégrité de vos précieuses bouteilles jusqu'à votre cave.</p>
+                </div>
+                <div class="expertise-card glass-card fade-in">
+                    <i class="fas fa-book"></i>
+                    <h3>Conseil sur mesure</h3>
+                    <p>Laissez-nous vous guider dans la constitution de votre cave ou la sélection pour vos événements.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-        mobileMenu.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
+<!-- Testimonials Section -->
+<section id="testimonials" class="testimonials">
+    <div class="container">
+        <h2>Témoignages</h2>
+        <div class="testimonial-container">
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <div class="testimonial-content fade-in">
+                        <div class="testimonial-text">
+                            "Edgar d'Esplot est bien plus qu'un simple caviste. C'est une institution, un lieu de partage et de découverte. Leurs conseils m'ont permis de constituer une cave dont je suis fier et qui impressionne mes amis à chaque dégustation."
+                        </div>
+                        <div class="testimonial-author">Jean-Philippe M., client depuis 15 ans</div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            "Je cherchais un vin exceptionnel pour célébrer nos 30 ans de mariage. L'équipe d'Edgar d'Esplot m'a guidé vers un Chambertin Grand Cru 1990 qui restera gravé dans nos mémoires. Un service attentionné, un conseil parfait."
+                        </div>
+                        <div class="testimonial-author">Catherine L., Paris</div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            "En tant que chef étoilé, je ne peux me permettre de proposer que l'excellence. La collaboration avec Edgar d'Esplot nous permet d'offrir à nos clients une carte des vins exceptionnelle, constamment renouvelée avec des pépites rares."
+                        </div>
+                        <div class="testimonial-author">Pierre D., Chef étoilé</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-buttons">
+            <button class="testimonial-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+            <button class="testimonial-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <div class="container">
+        <h2>Nous Contacter</h2>
+        <div class="contact-content">
+            <div class="contact-info fade-in">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="contact-text">
+                        <h3>Notre Adresse</h3>
+                        <p>15 rue des Grands Crus<br>75008 Paris, France</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div class="contact-text">
+                        <h3>Horaires d'ouverture</h3>
+                        <p>Lundi - Samedi: 10h00 - 19h30<br>Dimanche: Fermé</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div class="contact-text">
+                        <h3>Téléphone</h3>
+                        <p>+33 (0)1 45 67 89 10</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div class="contact-text">
+                        <h3>Email</h3>
+                        <p>contact@edgardesplot.fr</p>
+                    </div>
+                </div>
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.142047033371!2d2.3002149156607056!3d48.8738321792871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fc4f8500001%3A0x94188515505acc8!2s75008%20Paris%2C%20France!5e0!3m2!1sfr!2sfr!4v1616062797055!5m2!1sfr!2sfr" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+            <div class="contact-form fade-in">
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Nom</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Sujet</label>
+                        <input type="text" id="subject" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" class="form-control" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-about">
+                <h3>Edgar d'Esplot</h3>
+                <p>Depuis 1897, Edgar d'Esplot sélectionne pour vous les meilleurs vins de France et d'ailleurs. Notre expertise et notre passion sont à votre service pour vous faire découvrir l'univers fascinant des grands vins.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Liens rapides</h3>
+                <ul>
+                    <li><a href="#about">Notre Histoire</a></li>
+                    <li><a href="#collections">Nos Vins</a></li>
+                    <li><a href="#expertise">Expertise</a></li>
+                    <li><a href="#testimonials">Témoignages</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Informations</h3>
+                <ul>
+                    <li><a href="#">Conditions générales</a></li>
+                    <li><a href="#">Politique de confidentialité</a></li>
+                    <li><a href="#">Livraisons</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Carrières</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 Edgar d'Esplot - Tous droits réservés
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Navigation
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links li');
+    const navbar = document.querySelector('.navbar');
+
+    burger.addEventListener('click', () => {
+        // Toggle Nav
+        nav.classList.toggle('show');
+        // Animate Links
+        navLinks.forEach((link, index) => {
+            if (link.style.animation) {
+                link.style.animation = '';
+            } else {
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+            }
         });
-    </script>
-</body>
-</html>
+        // Burger Animation
+        burger.classList.toggle('active');
+    });
+
+    // Scroll Effect for Navbar
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Testimonial Slider
+    const slider = document.querySelector('.testimonial-slider');
+    const nextBtn = document.querySelector('.next-btn');
+    const prevBtn = document.querySelector('.prev-btn');
+    const testimonials = document.querySelectorAll('.testimonial');
+    let counter = 0;
+    const size = testimonials.clientWidth;
+
+    nextBtn.addEventListener('click', () => {
+        if (counter >= testimonials.length - 1) return;
+        counter++;
+        slider.style.transform = `translateX(${-size * counter}px)`;
+    });
+
+    prevBtn.addEventListener('click', () => {
+        if (counter <= 0) return;
+        counter--;
+        slider.style.transform = `translateX(${-size * counter}px)`;
+    });
+
+    // Fade in Animation on Scroll
+    const fadeElements = document.querySelectorAll('.fade-in');
+
+    const fadeIn = () => {
+        fadeElements.forEach(element => {
+            // Get element position relative to viewport
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150; // Adjust this value as needed
+            
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.classList.add('visible');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', fadeIn);
+    window.addEventListener('load', fadeIn);
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            const target = document.querySelector(this.getAttribute('href'));
+            
+            if (target) {
+                window.scrollTo({
+                    top: target.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                if (nav.classList.contains('show')) {
+                    nav.classList.remove('show');
+                    burger.classList.remove('active');
+                }
+            }
+        });
+    });
+</script>
+</body> </html>
