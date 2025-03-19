@@ -31,7 +31,7 @@
             font-family: var(--font-sans);
             line-height: 1.6;
             color: var(--color-dark);
-            background-color: var(--color-light);
+            background-color: var(--color-dark);
             overflow-x: hidden;
         }
 
@@ -76,6 +76,7 @@
         section {
             padding: 100px 8%;
             position: relative;
+            color: white;
         }
 
         .btn {
@@ -119,6 +120,7 @@
             z-index: 1000;
             padding: 15px 8%;
             transition: all 0.4s ease;
+            background-color: var(--color-dark);
         }
 
         header.scrolled {
@@ -207,7 +209,7 @@
 
         /* Histoire Section */
         #histoire {
-            background-color: var(--color-light);
+            background-color: var(--color-dark);
         }
 
         .histoire-container {
@@ -274,7 +276,7 @@
 
         .year {
             font-weight: bold;
-            color: var(--color-primary);
+            color: var(--color-secondary);
             margin-bottom: 5px;
         }
 
@@ -361,7 +363,7 @@
 
         /* Processus Section */
         #processus {
-            background-color: var(--color-light);
+            background-color: var(--color-dark);
         }
 
         .processus-intro {
@@ -380,8 +382,8 @@
             text-align: center;
             padding: 30px;
             border-radius: 15px;
-            background-color: white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            background-color: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease;
         }
 
@@ -391,7 +393,7 @@
 
         .step-icon {
             font-size: 3rem;
-            color: var(--color-primary);
+            color: var(--color-secondary);
             margin-bottom: 20px;
         }
 
@@ -437,7 +439,7 @@
 
         /* Témoignages Section */
         #temoignages {
-            background-color: var(--color-light);
+            background-color: var(--color-dark);
         }
 
         .testimonial-intro {
@@ -455,8 +457,8 @@
         .testimonial-card {
             padding: 30px;
             border-radius: 15px;
-            background-color: white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            background-color: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease;
         }
 
@@ -495,7 +497,7 @@
 
         .author-info p {
             font-size: 0.9rem;
-            color: #777;
+            color: #ccc;
             margin: 0;
         }
 
@@ -839,6 +841,7 @@
                     <li><a href="#hero">Accueil</a></li>
                     <li><a href="#histoire">Histoire</a></li>
                     <li><a href="#collection">Nos Vins</a></li>
+                    <li><a href="#millesimes">Millésimes 2023</a></li>
                     <li><a href="#processus">Savoir-faire</a></li>
                     <li><a href="#terroir">Terroir</a></li>
                     <li><a href="#evenements">Événements</a></li>
@@ -853,7 +856,7 @@
     <section id="hero">
         <div class="hero-content">
             <h1 class="fade-in">Maison de Vin Edgar d'Esplot</h1>
-            <p class="fade-in delay-1">Depuis 1847, notre passion pour les grands vins de Bourgogne se transmet de génération en génération. En tant que négociants, nous sélectionnons avec exigence les meilleurs crus pour vous offrir l'excellence et l'authenticité des terroirs bourguignons.</p>
+            <p class="fade-in delay-1">Depuis 1973, notre passion pour les grands vins de Bourgogne se transmet de génération en génération. En tant que négociants, nous sélectionnons avec exigence les meilleurs crus pour vous offrir l'excellence et l'authenticité des terroirs bourguignons.</p>
             <a href="#millesimes" class="btn fade-in delay-2">Découvrir nos millésimes 2023</a>
         </div>
     </section>
@@ -863,28 +866,28 @@
         <div class="histoire-container">
             <div class="histoire-text">
                 <h2 class="fade-in">Notre Histoire</h2>
-                <p class="fade-in delay-1">Fondée en 1847 par Edgar d'Esplot, notre maison de négoce perpétue l'art de la sélection et de la distribution des plus grands vins de Bourgogne. À travers les générations, nous avons développé des relations privilégiées avec les meilleurs domaines viticoles pour vous proposer une collection exceptionnelle de vins d'appellation.</p>
+                <p class="fade-in delay-1">Fondée en 1973, notre maison de négoce perpétue l'art de la sélection et de la distribution des plus grands vins de Bourgogne. En tant que partenaires des meilleurs vignerons et domaines viticoles, nous vous proposons une collection exceptionnelle de vins d'appellation.</p>
                 <p class="fade-in delay-2">L'histoire de notre maison est intimement liée à celle de la Bourgogne viticole. Passionnés et experts, nous parcourons les vignobles pour dénicher les cuvées qui expriment avec justesse l'identité de leur terroir et la vision de leur producteur.</p>
                 <div class="timeline fade-in delay-3">
                     <div class="timeline-item">
-                        <div class="year">1847</div>
-                        <p>Création de la Maison Edgar d'Esplot par Edgar d'Esplot, qui commence à commercialiser les vins des vignerons de la Côte de Beaune.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="year">1895</div>
-                        <p>Développement des exportations vers l'Europe et les États-Unis sous l'impulsion d'Henri d'Esplot, fils du fondateur.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="year">1945</div>
-                        <p>Après la Seconde Guerre mondiale, Charles d'Esplot reconstruit le négoce et noue de nouvelles relations avec les domaines viticoles.</p>
+                        <div class="year">1973</div>
+                        <p>Création de la Maison Edgar d'Esplot, qui commence à commercialiser les vins des vignerons de la Côte de Beaune.</p>
                     </div>
                     <div class="timeline-item">
                         <div class="year">1987</div>
-                        <p>Modernisation de l'entreprise et orientation vers les grands crus et premiers crus de Bourgogne exclusivement.</p>
+                        <p>Développement d'un réseau de distribution à travers la France et début de participation aux grands salons viticoles.</p>
                     </div>
                     <div class="timeline-item">
-                        <div class="year">2018</div>
-                        <p>La cinquième génération prend les rênes de la maison et poursuit son développement à l'international tout en préservant son authenticité.</p>
+                        <div class="year">1995</div>
+                        <p>Expansion de notre catalogue avec l'intégration de domaines prestigieux de toute la Bourgogne.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2008</div>
+                        <p>Modernisation de l'entreprise et spécialisation dans les grands crus et premiers crus de Bourgogne.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2022</div>
+                        <p>Ouverture de notre nouvelle boutique au centre de Beaune et lancement de notre service de conseil personnalisé.</p>
                     </div>
                 </div>
             </div>
@@ -1071,14 +1074,14 @@
         </div>
         <div class="testimonials-container">
             <div class="testimonial-card fade-in delay-2">
-                <p class="testimonial-text">"La Maison Edgar d'Esplot est mon fournisseur de référence depuis plus de dix ans. Leur sélection de vins de Bourgogne est irréprochable, et leurs conseils toujours pertinents. Une valeur sûre pour mon restaurant étoilé."</p>
+                <p class="testimonial-text">"Je collabore avec la Maison Edgar d'Esplot depuis que j'ai repris la cave de mes parents. Leur professionnalisme et la qualité constante de leur sélection en font un partenaire de choix. Mes clients sont toujours enchantés par les vins qu'ils nous proposent."</p>
                 <div class="testimonial-author">
                     <div class="author-img">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Pierre L.">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Thomas B.">
                     </div>
                     <div class="author-info">
-                        <h4>Pierre L.</h4>
-                        <p>Chef étoilé, Lyon</p>
+                        <h4>Thomas B.</h4>
+                        <p>Caviste, Strasbourg</p>
                     </div>
                 </div>
             </div>
@@ -1095,14 +1098,14 @@
                 </div>
             </div>
             <div class="testimonial-card fade-in delay-4">
-                <p class="testimonial-text">"Je collabore avec la Maison Edgar d'Esplot depuis que j'ai repris la cave de mes parents. Leur professionnalisme et la qualité constante de leur sélection en font un partenaire de choix. Mes clients sont toujours enchantés par les vins qu'ils nous proposent."</p>
+                <p class="testimonial-text">"La Maison Edgar d'Esplot est mon fournisseur de référence depuis plus de dix ans. Leur sélection de vins de Bourgogne est irréprochable, et leurs conseils toujours pertinents. Une valeur sûre pour mon restaurant étoilé."</p>
                 <div class="testimonial-author">
                     <div class="author-img">
-                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Thomas B.">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Pierre L.">
                     </div>
                     <div class="author-info">
-                        <h4>Thomas B.</h4>
-                        <p>Caviste, Strasbourg</p>
+                        <h4>Pierre L.</h4>
+                        <p>Chef étoilé, Lyon</p>
                     </div>
                 </div>
             </div>
@@ -1118,15 +1121,15 @@
         <div class="events-container">
             <div class="event-card fade-in delay-2">
                 <div class="event-date">
-                    <span class="month">MAR</span>
-                    <span class="days">7-9</span>
+                    <span class="month">AVR</span>
+                    <span class="days">25-28</span>
                     <span class="year">2025</span>
                 </div>
                 <div class="event-info">
-                    <h3>Salon Mer et Vignes - Lyon</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Eurexpo Lyon, Avenue Louis Blériot</p>
-                    <p><i class="fas fa-clock"></i> 7-8 mars: 10h-19h | 9 mars: 10h-18h</p>
-                    <p>Retrouvez-nous sur notre stand pour découvrir notre sélection de millésimes 2023, avec dégustation de nos Aloxe-Corton et Nuits-Saint-Georges.</p>
+                    <h3>Salon de Strasbourg</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Zenith, 1 Allée du Zenith, 67201 Eckbolsheim</p>
+                    <p><i class="fas fa-clock"></i> Du vendredi 25 au lundi 28 avril 2025</p>
+                    <p>Retrouvez notre équipe sur notre stand pour découvrir et déguster notre sélection de vins de Bourgogne.</p>
                 </div>
             </div>
             <div class="event-card fade-in delay-3">
@@ -1145,25 +1148,25 @@
             <div class="event-card fade-in delay-4">
                 <div class="event-date">
                     <span class="month">AVR</span>
-                    <span class="days">5-14</span>
+                    <span class="days">4-14</span>
                     <span class="year">2025</span>
                 </div>
                 <div class="event-info">
                     <h3>Foire de Lyon</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Eurexpo Lyon, Pavillon 4, Allée D, Stand 123</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Eurexpo Lyon, Stand 1D17, Hall 1</p>
                     <p><i class="fas fa-clock"></i> Tous les jours de 10h à 19h</p>
                     <p>Nous serons présents pendant toute la durée de la foire avec des dégustations quotidiennes et des offres spéciales sur nos Pommard et Chablis 2023.</p>
                 </div>
             </div>
             <div class="event-card fade-in delay-5">
                 <div class="event-date">
-                    <span class="month">MAI</span>
-                    <span class="days">2-12</span>
+                    <span class="month">AVR-MAI</span>
+                    <span class="days">30-11</span>
                     <span class="year">2025</span>
                 </div>
                 <div class="event-info">
                     <h3>Foire de Paris</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Paris Expo Porte de Versailles, Pavillon 5.2, Stand F45</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Paris Expo Porte de Versailles, Stand 3H090</p>
                     <p><i class="fas fa-clock"></i> Tous les jours de 10h à 19h, nocturne le vendredi jusqu'à 22h</p>
                     <p>Notre équipe vous accueillera pour vous faire découvrir l'ensemble de notre gamme, avec un focus particulier sur notre Saint-Romain 2023, révélation de l'année.</p>
                 </div>
@@ -1184,6 +1187,7 @@
                     <div>
                         <h3>Adresse</h3>
                         <p>Maison Edgar d'Esplot<br>15 rue des Grands Crus<br>21200 Beaune, France</p>
+                        <p>Boutique:<br>14 rue Victor Millot<br>21200 Beaune</p>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -1202,6 +1206,7 @@
                     <div>
                         <h3>Email</h3>
                         <p>contact@edgardesplot.fr</p>
+                        <p>comptoirdesvinsdebourgogne@gmail.com</p>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -1238,7 +1243,7 @@
         <div class="footer-content">
             <div class="footer-column">
                 <h3>Edgar d'Esplot</h3>
-                <p>Négociants en vins fins de Bourgogne depuis 1847. Notre expertise et notre passion au service des amateurs de grands vins.</p>
+                <p>Négociants en vins fins de Bourgogne depuis 1973. Notre expertise et notre passion au service des amateurs de grands vins.</p>
                 <div class="social-icons">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
@@ -1324,9 +1329,3 @@
     </script>
 </body>
 </html>
-
-
-
-<div class="gtranslate_wrapper"></div>
-<script>window.gtranslateSettings = {"default_language":"fr","detect_browser_language":true,"languages":["fr","it","es","de","ar","iw","ru","en"],"globe_color":"#66aaff","wrapper_selector":".gtranslate_wrapper","horizontal_position":"left","vertical_position":"bottom","alt_flags":{"en":"usa"}}</script>
-<script src="https://cdn.gtranslate.net/widgets/latest/globe.js" defer></script>
