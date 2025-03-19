@@ -62,6 +62,11 @@
             background-color: var(--color-secondary);
         }
 
+        .text-center h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
         p {
             margin-bottom: 1.5rem;
             font-size: 1.1rem;
@@ -77,6 +82,10 @@
             padding: 100px 8%;
             position: relative;
             color: white;
+        }
+
+        .text-center {
+            text-align: center;
         }
 
         .btn {
@@ -133,6 +142,16 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 40px;
+            margin-right: 10px;
         }
 
         .logo {
@@ -408,10 +427,12 @@
             background-size: cover;
             background-position: center;
             color: white;
+            text-align: center;
         }
 
         .terroir-content {
             max-width: 800px;
+            margin: 0 auto;
         }
 
         .values-container {
@@ -419,6 +440,9 @@
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             margin-top: 50px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .value-item {
@@ -616,28 +640,26 @@
             margin-top: 5px;
         }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 5px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
+        .whatsapp-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #25D366;
             color: white;
-            font-family: var(--font-sans);
+            border-radius: 30px;
+            text-align: center;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-top: 20px;
         }
 
-        input::placeholder, textarea::placeholder {
-            color: rgba(255, 255, 255, 0.7);
+        .whatsapp-btn i {
+            margin-right: 10px;
         }
 
-        textarea {
-            height: 150px;
-            resize: none;
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         /* Footer */
@@ -832,7 +854,10 @@
     <!-- Header -->
     <header id="header">
         <div class="header-content">
-            <a href="#" class="logo">Edgar <span>d'Esplot</span></a>
+            <div class="logo-container">
+                <img src="https://via.placeholder.com/40x40/8B0000/FFFFFF?text=E" alt="Logo Edgar d'Esplot" class="logo-img">
+                <a href="#" class="logo">Edgar <span>d'Esplot</span></a>
+            </div>
             <div class="hamburger">
                 <i class="fas fa-bars"></i>
             </div>
@@ -856,7 +881,7 @@
     <section id="hero">
         <div class="hero-content">
             <h1 class="fade-in">Maison de Vin Edgar d'Esplot</h1>
-            <p class="fade-in delay-1">Depuis 1973, notre passion pour les grands vins de Bourgogne se transmet de génération en génération. En tant que négociants, nous sélectionnons avec exigence les meilleurs crus pour vous offrir l'excellence et l'authenticité des terroirs bourguignons.</p>
+            <p class="fade-in delay-1">Depuis 1847, notre passion pour les grands vins de Bourgogne se transmet de génération en génération. En tant que négociants, nous sélectionnons avec exigence les meilleurs crus pour vous offrir l'excellence et l'authenticité des terroirs bourguignons.</p>
             <a href="#millesimes" class="btn fade-in delay-2">Découvrir nos millésimes 2023</a>
         </div>
     </section>
@@ -870,20 +895,20 @@
                 <p class="fade-in delay-2">L'histoire de notre maison est intimement liée à celle de la Bourgogne viticole. Passionnés et experts, nous parcourons les vignobles pour dénicher les cuvées qui expriment avec justesse l'identité de leur terroir et la vision de leur producteur.</p>
                 <div class="timeline fade-in delay-3">
                     <div class="timeline-item">
+                        <div class="year">1847</div>
+                        <p>Création de la Maison Edgar d'Esplot par Edgar d'Esplot, qui commence à commercialiser les vins des vignerons de la Côte de Beaune.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">1895</div>
+                        <p>Développement des exportations vers l'Europe et les États-Unis sous l'impulsion d'Henri d'Esplot, fils du fondateur.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">1945</div>
+                        <p>Après la Seconde Guerre mondiale, Charles d'Esplot reconstruit le négoce et noue de nouvelles relations avec les domaines viticoles.</p>
+                    </div>
+                    <div class="timeline-item">
                         <div class="year">1973</div>
-                        <p>Création de la Maison Edgar d'Esplot, qui commence à commercialiser les vins des vignerons de la Côte de Beaune.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="year">1987</div>
-                        <p>Développement d'un réseau de distribution à travers la France et début de participation aux grands salons viticoles.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="year">1995</div>
-                        <p>Expansion de notre catalogue avec l'intégration de domaines prestigieux de toute la Bourgogne.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="year">2008</div>
-                        <p>Modernisation de l'entreprise et spécialisation dans les grands crus et premiers crus de Bourgogne.</p>
+                        <p>La Maison Edgar d'Esplot est reprise et modernisée, se concentrant sur la sélection de grands vins de Bourgogne.</p>
                     </div>
                     <div class="timeline-item">
                         <div class="year">2022</div>
@@ -924,7 +949,7 @@
             </div>
             <div class="wine-card glass fade-in delay-4">
                 <div class="wine-img">
-                    <img src="https://images.unsplash.com/photo-1568213816046-0a1555afb8e6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" alt="Villages">
+                    <img src="https://images.unsplash.com/photo-1515779122185-2dc723855e57?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" alt="Villages">
                 </div>
                 <div class="wine-info">
                     <h3 class="wine-name">Villages</h3>
@@ -961,7 +986,7 @@
             </div>
             <div class="wine-card glass fade-in delay-4">
                 <div class="wine-img">
-                    <img src="https://images.unsplash.com/photo-1568213816046-0a1555afb8e6" alt="Pommard">
+                    <img src="https://images.unsplash.com/photo-1554866585-cd94860890b7" alt="Pommard">
                 </div>
                 <div class="wine-info">
                     <h3 class="wine-name">Pommard 2023</h3>
@@ -1028,7 +1053,7 @@
     </section>
 
     <!-- Terroir Section -->
-    <section id="terroir">
+    <section id="terroir" class="text-center">
         <div class="terroir-content glass fade-in">
             <h2>Notre Terroir & Nos Valeurs</h2>
             <p class="fade-in delay-1">La Bourgogne, avec ses climats classés au patrimoine mondial de l'UNESCO, est une mosaïque de terroirs uniques. Chaque parcelle possède sa propre identité géologique et climatique qui s'exprime à travers les vins que nous sélectionnons.</p>
@@ -1077,18 +1102,6 @@
                 <p class="testimonial-text">"Je collabore avec la Maison Edgar d'Esplot depuis que j'ai repris la cave de mes parents. Leur professionnalisme et la qualité constante de leur sélection en font un partenaire de choix. Mes clients sont toujours enchantés par les vins qu'ils nous proposent."</p>
                 <div class="testimonial-author">
                     <div class="author-img">
-                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Thomas B.">
-                    </div>
-                    <div class="author-info">
-                        <h4>Thomas B.</h4>
-                        <p>Caviste, Strasbourg</p>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card fade-in delay-3">
-                <p class="testimonial-text">"Grâce aux conseils avisés d'Edgar d'Esplot, j'ai pu constituer une cave de vins de Bourgogne exceptionnelle. Leur connaissance des terroirs et leur capacité à dénicher des pépites est impressionnante. Une référence incontournable pour tout amateur exigeant."</p>
-                <div class="testimonial-author">
-                    <div class="author-img">
                         <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sophie D.">
                     </div>
                     <div class="author-info">
@@ -1097,15 +1110,27 @@
                     </div>
                 </div>
             </div>
-            <div class="testimonial-card fade-in delay-4">
-                <p class="testimonial-text">"La Maison Edgar d'Esplot est mon fournisseur de référence depuis plus de dix ans. Leur sélection de vins de Bourgogne est irréprochable, et leurs conseils toujours pertinents. Une valeur sûre pour mon restaurant étoilé."</p>
+            <div class="testimonial-card fade-in delay-3">
+                <p class="testimonial-text">"Grâce aux conseils avisés d'Edgar d'Esplot, j'ai pu constituer une cave de vins de Bourgogne exceptionnelle. Leur connaissance des terroirs et leur capacité à dénicher des pépites est impressionnante. Une référence incontournable pour tout amateur exigeant."</p>
                 <div class="testimonial-author">
                     <div class="author-img">
                         <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Pierre L.">
                     </div>
                     <div class="author-info">
                         <h4>Pierre L.</h4>
-                        <p>Chef étoilé, Lyon</p>
+                        <p>Amateur de vins, Lyon</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card fade-in delay-4">
+                <p class="testimonial-text">"J'ai découvert les vins de la Maison Edgar d'Esplot lors d'une dégustation et j'ai été conquis par la qualité de leur sélection. Leur connaissance pointue des terroirs bourguignons et leurs conseils personnalisés m'ont permis de découvrir des vins qui correspondent parfaitement à mes goûts."</p>
+                <div class="testimonial-author">
+                    <div class="author-img">
+                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Jean M.">
+                    </div>
+                    <div class="author-info">
+                        <h4>Jean M.</h4>
+                        <p>Collectionneur, Bordeaux</p>
                     </div>
                 </div>
             </div>
@@ -1148,7 +1173,7 @@
             <div class="event-card fade-in delay-4">
                 <div class="event-date">
                     <span class="month">AVR</span>
-                    <span class="days">4-14</span>
+                    <span class="days">5-14</span>
                     <span class="year">2025</span>
                 </div>
                 <div class="event-info">
@@ -1160,13 +1185,13 @@
             </div>
             <div class="event-card fade-in delay-5">
                 <div class="event-date">
-                    <span class="month">AVR-MAI</span>
-                    <span class="days">30-11</span>
+                    <span class="month">MAI</span>
+                    <span class="days">2-12</span>
                     <span class="year">2025</span>
                 </div>
                 <div class="event-info">
                     <h3>Foire de Paris</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Paris Expo Porte de Versailles, Stand 3H090</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Paris Expo Porte de Versailles, Stand 3H090, Pavillon 5.2</p>
                     <p><i class="fas fa-clock"></i> Tous les jours de 10h à 19h, nocturne le vendredi jusqu'à 22h</p>
                     <p>Notre équipe vous accueillera pour vous faire découvrir l'ensemble de notre gamme, avec un focus particulier sur notre Saint-Romain 2023, révélation de l'année.</p>
                 </div>
@@ -1179,7 +1204,7 @@
         <div class="contact-container">
             <div class="contact-info glass fade-in">
                 <h2>Nous Contacter</h2>
-                <p>Nous serions ravis de répondre à vos questions et de vous conseiller dans votre sélection de vins. N'hésitez pas à nous contacter par téléphone, email ou en remplissant le formulaire ci-contre.</p>
+                <p>Nous serions ravis de répondre à vos questions et de vous conseiller dans votre sélection de vins. N'hésitez pas à nous contacter par téléphone, WhatsApp ou email.</p>
                 <div class="contact-item">
                     <div class="contact-icon">
                         <i class="fas fa-map-marker-alt"></i>
@@ -1187,7 +1212,6 @@
                     <div>
                         <h3>Adresse</h3>
                         <p>Maison Edgar d'Esplot<br>15 rue des Grands Crus<br>21200 Beaune, France</p>
-                        <p>Boutique:<br>14 rue Victor Millot<br>21200 Beaune</p>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -1196,7 +1220,7 @@
                     </div>
                     <div>
                         <h3>Téléphone</h3>
-                        <p>+33 (0)3 80 XX XX XX</p>
+                        <p>+33 6 85 14 29 63</p>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -1205,8 +1229,8 @@
                     </div>
                     <div>
                         <h3>Email</h3>
-                        <p>contact@edgardesplot.fr</p>
-                        <p>comptoirdesvinsdebourgogne@gmail.com</p>
+                        <p><a href="mailto:contact@edgardesplot.fr?subject=Demande d'information&body=Bonjour, je souhaiterais obtenir des informations sur vos vins.">contact@edgardesplot.fr</a></p>
+                        <p><a href="mailto:comptoirdesvinsdebourgogne@gmail.com?subject=Demande d'information&body=Bonjour, je souhaiterais obtenir des informations sur vos vins.">comptoirdesvinsdebourgogne@gmail.com</a></p>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -1218,23 +1242,16 @@
                         <p>Du lundi au vendredi<br>9h00 - 12h30 | 14h00 - 18h30<br>Samedi sur rendez-vous uniquement</p>
                     </div>
                 </div>
+                <a href="https://wa.me/33685142963?text=Bonjour, je vous contacte depuis votre site web et je souhaiterais en savoir plus sur vos vins." class="whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> Nous contacter sur WhatsApp
+                </a>
             </div>
-            <form class="glass fade-in delay-2">
-                <h2>Nous Écrire</h2>
-                <div class="form-group">
-                    <input type="text" placeholder="Nom" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" placeholder="Email" required>
-                </div>
-                <div class="form-group">
-                    <input type="text" placeholder="Objet">
-                </div>
-                <div class="form-group">
-                    <textarea placeholder="Votre message" required></textarea>
-                </div>
-                <button type="submit" class="btn">Envoyer</button>
-            </form>
+            <div class="contact-info glass fade-in delay-2">
+                <h2>Nos Services</h2>
+                <p>Nous vous proposons une sélection personnalisée de vins adaptés à vos goûts et à votre budget. Que ce soit pour un événement spécial, pour enrichir votre cave, ou simplement pour découvrir les trésors de la Bourgogne, notre expertise est à votre service.</p>
+                <p>Notre mission est de vous faire partager notre passion pour les vins de Bourgogne et de vous accompagner dans la découverte de ce terroir d'exception.</p>
+                <p>N'hésitez pas à nous contacter directement par WhatsApp ou email pour une réponse rapide et personnalisée.</p>
+            </div>
         </div>
     </section>
 
@@ -1243,7 +1260,7 @@
         <div class="footer-content">
             <div class="footer-column">
                 <h3>Edgar d'Esplot</h3>
-                <p>Négociants en vins fins de Bourgogne depuis 1973. Notre expertise et notre passion au service des amateurs de grands vins.</p>
+                <p>Négociants en vins fins de Bourgogne depuis 1847. Notre expertise et notre passion au service des amateurs de grands vins.</p>
                 <div class="social-icons">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
@@ -1263,12 +1280,10 @@
                 </ul>
             </div>
             <div class="footer-column">
-                <h3>Newsletter</h3>
-                <p>Inscrivez-vous pour recevoir nos actualités et être informé de nos prochaines dégustations et événements.</p>
-                <div class="form-group">
-                    <input type="email" placeholder="Votre email">
-                </div>
-                <button class="btn">S'inscrire</button>
+                <h3>Contact</h3>
+                <p>+33 6 85 14 29 63</p>
+                <p><a href="mailto:contact@edgardesplot.fr">contact@edgardesplot.fr</a></p>
+                <p>15 rue des Grands Crus<br>21200 Beaune, France</p>
             </div>
         </div>
         <div class="footer-bottom">
