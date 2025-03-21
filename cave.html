@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Cave - Maison Edgar d'Esplot</title>
+    <style>
+        body {
+            font-family: 'Garamond', serif;
+            background-color: #f5f1e6;
+            color: #4a2c2a;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 25px 8%;
+            transition: all 0.4s ease;
+            background-color: var(--color-dark);
+        }
+
+        header.scrolled {
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 10px 8%;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 90px;
+            margin-right: 45px;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            color: white;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--color-secondary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+            background: var(--color-secondary);
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+
+        .main-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .video-container {
+            margin: 40px auto;
+            max-width: 100%;
+        }
+        video {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .tagline {
+            font-size: 24px;
+            font-style: italic;
+            margin: 30px 0;
+        }
+        .wine-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+        .wine-card {
+            width: 200px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        .wine-image {
+            width: 100%;
+            height: auto;
+        }
+        .wine-description {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            max-width: 80%;
+            max-height: 80%;
+            overflow-y: auto;
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+        h1, h2 {
+            color: #731c19;
+        }
+        audio {
+            margin-top: 30px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="LOGOROUGE.png" alt="" class="logo-img">
+                <a href="#" class="logo"></a>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <div class="main-content">
+        <div class="video-container">
+            <video autoplay muted loop>
+                <source src="6356806-sd_640_360_30fps.mp4" type="video/mp4">
+                Votre navigateur ne prend pas en charge la lecture vidéo.
+            </video>
+        </div>
+
+        <div class="tagline">
+            "Notre cave, sanctuaire des grands terroirs bourguignons"
+        </div>
+
+        <h2>Notre Sélection</h2>
+        
+        <div class="wine-gallery">
+            <div class="wine-card" onclick="showDescription('pommard')">
+                <img src="ETA057419_HP POMMARD EN MAREAU 2023_MEB ME.png" alt="Pommard 2023" class="wine-image">
+            </div>
+            <div class="wine-card" onclick="showDescription('chablis')">
+                <img src="ETA057419_HP SANTENAY LE CHASSEUR 2023_MEB ME.png" alt="Chablis 2023" class="wine-image">
+            </div>
+            <div class="wine-card" onclick="showDescription('saint-romain')">
+                <img src="ETA057419_HP VOSNE ROMANEE 2022_MEB DD.png" alt="Saint-Romain 2023" class="wine-image">
+            </div>
+        </div>
+
+        <div id="pommard-description" class="wine-description">
+            <span class="close-btn" onclick="closeDescription('pommard')">X</span>
+            <h3>Pommard Premier Cru 2023</h3>
+            <p>Un vin d'une structure remarquable, alliant puissance et élégance. Les tanins soyeux soutiennent des arômes de fruits noirs et d'épices, révélant toute la noblesse de ce terroir d'exception.</p>
+        </div>
+
+        <div id="chablis-description" class="wine-description">
+            <span class="close-btn" onclick="closeDescription('chablis')">X</span>
+            <h3>Chablis Grand Cru 2023</h3>
+            <p>La minéralité caractéristique du terroir de Chablis s'exprime pleinement dans ce millésime d'une précision remarquable. Notes d'agrumes et tension vibrante composent un ensemble d'une grande pureté.</p>
+        </div>
+
+        <div id="saint-romain-description" class="wine-description">
+            <span class="close-btn" onclick="closeDescription('saint-romain')">X</span>
+            <h3>Saint-Romain 2023</h3>
+            <p>La révélation de l'année! Ce blanc d'une finesse aromatique surprenante offre un équilibre parfait entre fraîcheur citronnée et notes beurrées subtiles.</p>
+        </div>
+
+    </div>
+
+    <script>
+        function showDescription(wine) {
+            document.getElementById(wine + '-description').style.display = 'block';
+        }
+
+        function closeDescription(wine) {
+            document.getElementById(wine + '-description').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
