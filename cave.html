@@ -21,142 +21,163 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            padding: 25px 8%;
+            padding: 15px 0;
             transition: all 0.4s ease;
-            background-color: var(--color-dark);
+            background-color: rgba(26, 26, 26, 0.9);
+            backdrop-filter: blur(10px);
         }
 
         header.scrolled {
-            background: rgba(26, 26, 26, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 10px 8%;
+            padding: 10px 0;
         }
 
         .header-content {
             display: flex;
-            justify-content: space-between;
+            justify-content: center; /* Centre le logo */
             align-items: center;
         }
 
         .logo-container {
             display: flex;
             align-items: center;
+            justify-content: center;
         }
 
         .logo-img {
-            height: 90px;
-            margin-right: 45px;
+            height: 120px; /* Taille du logo doublée */
+            transition: all 0.4s ease; /* Transition douce pour le redimensionnement */
         }
 
-        .logo {
-            font-family: var(--font-serif);
-            font-size: 1.8rem;
-            color: white;
-            letter-spacing: 2px;
+        header.scrolled .logo-img {
+            height: 60px; /* Taille réduite lors du défilement */
         }
-
-        .logo span {
-            color: var(--color-secondary);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 30px;
-        }
-
-        nav ul li a {
-            color: white;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 500;
-            position: relative;
-        }
-
-        nav ul li a::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -5px;
-            width: 0;
-            height: 2px;
-            background: var(--color-secondary);
-            transition: width 0.3s ease;
-        }
-
-        nav ul li a:hover::after {
-            width: 100%;
-        }
-
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            color: white;
-            font-size: 1.5rem;
-        }
-
 
         .main-content {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
+            padding-top: 160px; /* Ajusté pour le logo plus grand */
         }
+        
         .video-container {
-            margin: 40px auto;
+            margin: 20px auto;
             max-width: 100%;
         }
+        
         video {
             width: 100%;
             border-radius: 8px;
         }
+        
         .tagline {
             font-size: 24px;
             font-style: italic;
             margin: 30px 0;
         }
+        
         .wine-gallery {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
             margin-top: 30px;
         }
+        
         .wine-card {
             width: 200px;
             margin-bottom: 20px;
             cursor: pointer;
+            transition: transform 0.3s ease;
         }
+        
+        .wine-card:hover {
+            transform: scale(1.05);
+        }
+        
         .wine-image {
             width: 100%;
             height: auto;
+            border-radius: 4px;
         }
+        
+        /* Style amélioré pour la description des vins */
         .wine-description {
             display: none;
             position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
             z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0; /* Pour l'effet de fondu */
+            transition: opacity 0.3s ease; /* Animation fluide */
+        }
+        
+        .wine-description.active {
+            display: flex; /* Affiche la popup */
+            opacity: 1; /* Rétablit l'opacité */
+        }
+        
+        .wine-description-inner {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
             max-width: 80%;
             max-height: 80%;
+            position: relative;
+            margin: auto;
             overflow-y: auto;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
         }
+        
+        .wine-description.active .wine-description-inner {
+            transform: scale(1);
+        }
+        
+        .wine-description-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .wine-description-image {
+            max-width: 100%;
+            max-height: 400px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+        
         .close-btn {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: 15px;
+            right: 15px;
             cursor: pointer;
+            font-weight: bold;
+            font-size: 24px;
+            color: #731c19;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 50%;
+            background-color: #f5f1e6;
         }
+        
         h1, h2 {
             color: #731c19;
         }
+        
+        h3 {
+            color: #731c19;
+            margin: 0 0 15px 0;
+            font-size: 22px;
+        }
+        
         audio {
             margin-top: 30px;
             width: 100%;
@@ -168,20 +189,10 @@
     <header id="header">
         <div class="header-content">
             <div class="logo-container">
-                <img src="LOGOROUGE.png" alt="" class="logo-img">
-                <a href="#" class="logo"></a>
+                <img src="LOGOROUGE.png" alt="Logo" class="logo-img">
             </div>
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
-            </div>
-            <nav>
-                <ul>
-
-                </ul>
-            </nav>
         </div>
     </header>
-
 
     <div class="main-content">
         <div class="video-container">
@@ -210,32 +221,78 @@
         </div>
 
         <div id="pommard-description" class="wine-description">
-            <span class="close-btn" onclick="closeDescription('pommard')">X</span>
-            <h3>Pommard Premier Cru 2023</h3>
-            <p>Un vin d'une structure remarquable, alliant puissance et élégance. Les tanins soyeux soutiennent des arômes de fruits noirs et d'épices, révélant toute la noblesse de ce terroir d'exception.</p>
+            <div class="wine-description-inner">
+                <span class="close-btn" onclick="closeDescription('pommard')">×</span>
+                <div class="wine-description-content">
+                    <img src="ETA057419_HP POMMARD EN MAREAU 2023_MEB ME.png" alt="Pommard 2023" class="wine-description-image">
+                    <h3>Pommard Premier Cru 2023</h3>
+                    <p>Un vin d'une structure remarquable, alliant puissance et élégance. Les tanins soyeux soutiennent des arômes de fruits noirs et d'épices, révélant toute la noblesse de ce terroir d'exception.</p>
+                </div>
+            </div>
         </div>
 
         <div id="chablis-description" class="wine-description">
-            <span class="close-btn" onclick="closeDescription('chablis')">X</span>
-            <h3>Chablis Grand Cru 2023</h3>
-            <p>La minéralité caractéristique du terroir de Chablis s'exprime pleinement dans ce millésime d'une précision remarquable. Notes d'agrumes et tension vibrante composent un ensemble d'une grande pureté.</p>
+            <div class="wine-description-inner">
+                <span class="close-btn" onclick="closeDescription('chablis')">×</span>
+                <div class="wine-description-content">
+                    <img src="ETA057419V_HP CHOREY LES BEAUNE 2021_MEB ME.png" alt="Chablis 2023" class="wine-description-image">
+                    <h3>Chablis Grand Cru 2023</h3>
+                    <p>La minéralité caractéristique du terroir de Chablis s'exprime pleinement dans ce millésime d'une précision remarquable. Notes d'agrumes et tension vibrante composent un ensemble d'une grande pureté.</p>
+                </div>
+            </div>
         </div>
 
         <div id="saint-romain-description" class="wine-description">
-            <span class="close-btn" onclick="closeDescription('saint-romain')">X</span>
-            <h3>Saint-Romain 2023</h3>
-            <p>La révélation de l'année! Ce blanc d'une finesse aromatique surprenante offre un équilibre parfait entre fraîcheur citronnée et notes beurrées subtiles.</p>
+            <div class="wine-description-inner">
+                <span class="close-btn" onclick="closeDescription('saint-romain')">×</span>
+                <div class="wine-description-content">
+                    <img src="ETA057419_HP VOSNE ROMANEE 2022_MEB DD.png" alt="Saint-Romain 2023" class="wine-description-image">
+                    <h3>Saint-Romain 2023</h3>
+                    <p>La révélation de l'année! Ce blanc d'une finesse aromatique surprenante offre un équilibre parfait entre fraîcheur citronnée et notes beurrées subtiles.</p>
+                </div>
+            </div>
         </div>
 
     </div>
 
     <script>
+        // Pour gérer l'effet de scroll sur le header
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Afficher la description du vin avec image
         function showDescription(wine) {
-            document.getElementById(wine + '-description').style.display = 'block';
+            const descElement = document.getElementById(wine + '-description');
+            descElement.classList.add('active');
+            
+            // Empêcher le défilement du contenu en arrière-plan
+            document.body.style.overflow = 'hidden';
+            
+            // Fermer en cliquant en dehors du contenu
+            descElement.addEventListener('click', function(e) {
+                if (e.target === descElement) {
+                    closeDescription(wine);
+                }
+            });
         }
 
         function closeDescription(wine) {
-            document.getElementById(wine + '-description').style.display = 'none';
+            const descElement = document.getElementById(wine + '-description');
+            descElement.classList.remove('active');
+            
+            // Attendre la fin de l'animation avant de cacher complètement
+            setTimeout(() => {
+                descElement.style.display = 'none';
+            }, 300);
+            
+            // Restaurer le défilement
+            document.body.style.overflow = 'auto';
         }
     </script>
 </body>
