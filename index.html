@@ -255,6 +255,14 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.8s ease;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        .histoire-image img.active {
+            opacity: 1;
         }
 
         .histoire-image:hover img {
@@ -799,7 +807,7 @@
                 </div>
             </div>
             <div class="histoire-image fade-in delay-4">
-                <img src="image5.jpeg" alt="Maison Edgar d'Esplot">
+                <img src="image5.jpeg" alt="Maison Edgar d'Esplot" class="active">
                 <img src="image4.jpeg" alt="Maison Edgar d'Esplot">
                 <img src="image0.jpeg" alt="Maison Edgar d'Esplot">
                 <img src="image2.jpeg" alt="Maison Edgar d'Esplot">
@@ -1097,6 +1105,30 @@
 
         window.addEventListener('scroll', revealOnScroll);
         window.addEventListener('load', revealOnScroll);
+
+        // Image slider for histoire section
+        const slideImages = () => {
+            const images = document.querySelectorAll('.histoire-image img');
+            let currentIndex = 0;
+
+            // Show the first image initially
+            images[0].classList.add('active');
+
+            // Change image every 3 seconds
+            setInterval(() => {
+                // Hide current image
+                images[currentIndex].classList.remove('active');
+                
+                // Move to next image
+                currentIndex = (currentIndex + 1) % images.length;
+                
+                // Show next image
+                images[currentIndex].classList.add('active');
+            }, 3000);
+        };
+
+        // Start the image slider
+        window.addEventListener('load', slideImages);
     </script>
 </body>
 </html>
