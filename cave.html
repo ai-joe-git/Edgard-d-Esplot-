@@ -44,19 +44,19 @@
         }
 
         .logo-img {
-            height: 120px;
+            height: 140px; /* Taille du logo augmentée */
             transition: all 0.4s ease;
         }
 
         header.scrolled .logo-img {
-            height: 60px;
+            height: 70px; /* Taille réduite lors du défilement, également augmentée */
         }
 
         .main-content {
-            max-width: 800px;
+            max-width: 1200px; /* Augmenté pour permettre 3 étiquettes par ligne */
             margin: 0 auto;
             padding: 20px;
-            padding-top: 160px;
+            padding-top: 180px; /* Ajusté pour le logo plus grand */
         }
         
         .video-container {
@@ -65,7 +65,7 @@
         }
         
         video {
-            width: 100%;
+            width: 50%;
             border-radius: 8px;
         }
         
@@ -83,8 +83,8 @@
         }
         
         .wine-card {
-            width: 200px;
-            margin-bottom: 20px;
+            width: 30%; /* Ajusté pour 3 par ligne */
+            margin-bottom: 30px; /* Augmenté pour plus d'espace vertical */
             cursor: pointer;
             transition: transform 0.3s ease;
         }
@@ -181,6 +181,19 @@
         audio {
             margin-top: 30px;
             width: 100%;
+        }
+
+        /* Responsive design pour les écrans plus petits */
+        @media (max-width: 768px) {
+            .wine-card {
+                width: 45%; /* 2 par ligne sur tablette */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .wine-card {
+                width: 100%; /* 1 par ligne sur mobile */
+            }
         }
     </style>
 </head>
@@ -279,7 +292,7 @@
                 <img src="ETA057419V_HP CHOREY LES BEAUNE 2021_MEB ME.png" alt="Chablis 2023" class="wine-image">
             </div>
         </div>
-
+        
         <div id="pommard-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('pommard')">×</span>
@@ -290,7 +303,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div id="chablis-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('chablis')">×</span>
@@ -301,7 +314,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div id="saint-romain-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('saint-romain')">×</span>
@@ -312,7 +325,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div id="pommard-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('pommard')">×</span>
@@ -323,7 +336,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div id="chablis-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('chablis')">×</span>
@@ -334,7 +347,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div id="saint-romain-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('saint-romain')">×</span>
@@ -345,7 +358,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div id="pommard-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('pommard')">×</span>
@@ -356,7 +369,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div id="chablis-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('chablis')">×</span>
@@ -367,7 +380,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div id="saint-romain-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('saint-romain')">×</span>
@@ -378,7 +391,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div id="pommard-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('pommard')">×</span>
@@ -389,7 +402,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div id="chablis-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('chablis')">×</span>
@@ -400,7 +413,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div id="saint-romain-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('saint-romain')">×</span>
@@ -411,7 +424,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div id="pommard-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('pommard')">×</span>
@@ -422,7 +435,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div id="chablis-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('chablis')">×</span>
@@ -433,7 +446,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div id="saint-romain-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('saint-romain')">×</span>
@@ -444,7 +457,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div id="pommard-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('pommard')">×</span>
@@ -455,7 +468,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div id="chablis-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('chablis')">×</span>
@@ -466,7 +479,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div id="saint-romain-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('saint-romain')">×</span>
@@ -477,7 +490,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div id="pommard-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('pommard')">×</span>
@@ -488,7 +501,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div id="chablis-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('chablis')">×</span>
@@ -499,7 +512,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div id="saint-romain-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('saint-romain')">×</span>
@@ -510,7 +523,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div id="pommard-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('pommard')">×</span>
@@ -521,7 +534,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div id="chablis-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('chablis')">×</span>
@@ -532,7 +545,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div id="saint-romain-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('saint-romain')">×</span>
@@ -543,7 +556,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div id="pommard-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('pommard')">×</span>
@@ -554,7 +567,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div id="chablis-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('chablis')">×</span>
@@ -565,7 +578,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div id="saint-romain-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('saint-romain')">×</span>
@@ -576,9 +589,9 @@
                 </div>
             </div>
         </div>
-
-
-    </div>
+        
+        
+        </div>
 
     <script>
         // Pour gérer l'effet de scroll sur le header
@@ -617,3 +630,19 @@
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
