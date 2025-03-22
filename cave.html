@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,7 @@
     <meta name="title" content="Maison Edgar d'Esplot - Négociant en Vins de Bourgogne" />
     <meta name="description"
         content="Depuis 1973, notre passion pour les grands vins de Bourgogne se transmet de génération en génération. En tant que NEGOCIANTS, nous sélectionnons avec exigence les meilleurs crus pour vous offrir l'excellence et l'authenticité des terroirs bourguignons." />
-    <meta property="og:image" content="https://edgardesplot.com/metalogo.jpg" />    
+    <meta property="og:image" content="https://edgardesplot.com/metalogo.jpg" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -25,6 +26,8 @@
     <meta property="twitter:description"
         content="Depuis 1973, notre passion pour les grands vins de Bourgogne se transmet de génération en génération. En tant que NEGOCIANTS, nous sélectionnons avec exigence les meilleurs crus pour vous offrir l'excellence et l'authenticité des terroirs bourguignons." />
     <meta property="twitter:image" content="https://edgardesplot.com/metalogo.jpg" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
         body {
             font-family: 'Garamond', serif;
@@ -34,7 +37,7 @@
             padding: 0;
             text-align: center;
         }
-        
+
         /* Header & Navigation */
         header {
             position: fixed;
@@ -65,61 +68,67 @@
         }
 
         .logo-img {
-            height: 140px; /* Taille du logo augmentée */
+            height: 140px;
+            /* Taille du logo augmentée */
             transition: all 0.4s ease;
         }
 
         header.scrolled .logo-img {
-            height: 70px; /* Taille réduite lors du défilement, également augmentée */
+            height: 70px;
+            /* Taille réduite lors du défilement, également augmentée */
         }
 
         .main-content {
-            max-width: 1200px; /* Augmenté pour permettre 3 étiquettes par ligne */
+            max-width: 1200px;
+            /* Augmenté pour permettre 3 étiquettes par ligne */
             margin: 0 auto;
             padding: 20px;
-            padding-top: 180px; /* Ajusté pour le logo plus grand */
+            padding-top: 180px;
+            /* Ajusté pour le logo plus grand */
         }
-        
+
         .video-container {
             margin: 30px auto;
             max-width: 100%;
         }
-        
+
         video {
             width: 55%;
             border-radius: 8px;
         }
-        
+
         .tagline {
             font-size: 24px;
             font-style: italic;
             margin: 30px 0;
         }
-        
+
         .wine-gallery {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
             margin-top: 30px;
         }
-        
+
         .wine-card {
-            width: 30%; /* Ajusté pour 3 par ligne */
-            margin-bottom: 30px; /* Augmenté pour plus d'espace vertical */
+            width: 30%;
+            /* Ajusté pour 3 par ligne */
+            margin-bottom: 30px;
+            /* Augmenté pour plus d'espace vertical */
             cursor: pointer;
             transition: transform 0.3s ease;
         }
-        
+
         .wine-card:hover {
             transform: scale(1.05);
         }
-        
+
         .wine-image {
             width: 100%;
             height: auto;
             border-radius: 4px;
         }
-        
+
         /* Style amélioré pour la description des vins */
         .wine-description {
             display: none;
@@ -128,24 +137,24 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.7);
+            background-color: rgba(0, 0, 0, 0.7);
             z-index: 1000;
             justify-content: center;
             align-items: center;
             opacity: 0;
             transition: opacity 0.3s ease;
         }
-        
+
         .wine-description.active {
             display: flex;
             opacity: 1;
         }
-        
+
         .wine-description-inner {
             background-color: #fff;
             padding: 30px;
             border-radius: 8px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
             max-width: 80%;
             max-height: 80%;
             position: relative;
@@ -154,25 +163,25 @@
             transform: scale(0.9);
             transition: transform 0.3s ease;
         }
-        
+
         .wine-description.active .wine-description-inner {
             transform: scale(1);
         }
-        
+
         .wine-description-content {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        
+
         .wine-description-image {
             max-width: 100%;
             max-height: 400px;
             margin-bottom: 20px;
             border-radius: 4px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
         }
-        
+
         .close-btn {
             position: absolute;
             top: 15px;
@@ -188,17 +197,18 @@
             border-radius: 50%;
             background-color: #f5f1e6;
         }
-        
-        h1, h2 {
+
+        h1,
+        h2 {
             color: #731c19;
         }
-        
+
         h3 {
             color: #731c19;
             margin: 0 0 15px 0;
             font-size: 22px;
         }
-        
+
         audio {
             margin-top: 30px;
             width: 100%;
@@ -207,13 +217,15 @@
         /* Responsive design pour les écrans plus petits */
         @media (max-width: 768px) {
             .wine-card {
-                width: 45%; /* 2 par ligne sur tablette */
+                width: 45%;
+                /* 2 par ligne sur tablette */
             }
         }
 
         @media (max-width: 480px) {
             .wine-card {
-                width: 100%; /* 1 par ligne sur mobile */
+                width: 100%;
+                /* 1 par ligne sur mobile */
             }
         }
 
@@ -222,7 +234,7 @@
                 margin: 30px auto;
                 max-width: 100%;
             }
-        
+
             video {
                 width: 100%;
                 border-radius: 8px;
@@ -234,297 +246,311 @@
                 margin: 30px auto;
                 max-width: 100%;
             }
-        
+
             video {
                 width: 100%;
                 border-radius: 8px;
             }
         }
 
-                /* Chat Widget - MINEO Dark Theme */
-.chat-widget {
-  position: fixed;
-  bottom: 20px;
-  left: 20px; /* Positioned at bottom left */
-  z-index: 1000;
-  font-family: 'Inter', sans-serif;
-  display: block; /* Always visible */
-}
+        /* Chat Widget - MINEO Dark Theme */
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            /* Positioned at bottom left */
+            z-index: 1000;
+            font-family: 'Inter', sans-serif;
+            display: block;
+            /* Always visible */
+        }
 
-.chat-button {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: var(--accent); /* Using MINEO's accent blue */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(41, 121, 255, 0.4);
-  transition: all 0.3s ease;
-  border: 1px solid rgba(41, 121, 255, 0.3);
-}
+        .chat-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: brown;
+            /* Using MINEO's accent blue */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(41, 121, 255, 0.4);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(41, 121, 255, 0.3);
+        }
 
-.chat-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(41, 121, 255, 0.5);
-}
+        .chat-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(41, 121, 255, 0.5);
+        }
 
-.chat-container {
-  position: absolute;
-  bottom: 80px;
-  left: 0; /* Aligned with the chat button */
-  width: 350px;
-  height: 500px;
-  background: rgba(30, 38, 50, 0.95); /* Darker, more opaque background */
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  transform-origin: bottom left;
-  transform: scale(0);
-  opacity: 0;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(41, 121, 255, 0.2);
-}
+        .chat-container {
+            position: absolute;
+            bottom: 80px;
+            left: 0;
+            /* Aligned with the chat button */
+            width: 350px;
+            height: 500px;
+            background: rgba(30, 38, 50, 0.95);
+            /* Darker, more opaque background */
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transform-origin: bottom left;
+            transform: scale(0);
+            opacity: 0;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(41, 121, 255, 0.2);
+        }
 
-.chat-container.active {
-  transform: scale(1);
-  opacity: 1;
-}
+        .chat-container.active {
+            transform: scale(1);
+            opacity: 1;
+        }
 
-.chat-header {
-  padding: 15px 20px;
-  background: linear-gradient(90deg, #2979ff, #1565c0); /* Gradient header */
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+        .chat-header {
+            padding: 15px 20px;
+            background: linear-gradient(90deg, #2979ff, #1565c0);
+            /* Gradient header */
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.chat-header h3 {
-  margin: 0;
-  font-size: 16px;
-  font-weight: 600;
-}
+        .chat-header h3 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 600;
+        }
 
-.close-chat {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-}
+        .close-chat {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
 
-.chat-messages {
-  flex: 1;
-  padding: 20px;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-}
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
 
-.message {
-  margin-bottom: 15px;
-  padding: 12px 15px;
-  border-radius: 18px;
-  max-width: 85%;
-  line-height: 1.5;
-  font-size: 14px;
-  word-wrap: break-word;
-  animation: fadeIn 0.3s ease;
-}
+        .message {
+            margin-bottom: 15px;
+            padding: 12px 15px;
+            border-radius: 18px;
+            max-width: 85%;
+            line-height: 1.5;
+            font-size: 14px;
+            word-wrap: break-word;
+            animation: fadeIn 0.3s ease;
+        }
 
-.user-message {
-  background: #2979ff; /* MINEO accent blue */
-  color: white;
-  align-self: flex-end;
-  border-bottom-right-radius: 4px;
-}
+        .user-message {
+            background: #2979ff;
+            /* MINEO accent blue */
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
 
-.bot-message {
-  background: rgba(255, 255, 255, 0.08); /* Slightly lighter than background */
-  color: #ffffff;
-  align-self: flex-start;
-  border-bottom-left-radius: 4px;
-  border: 1px solid rgba(41, 121, 255, 0.2);
-}
+        .bot-message {
+            background: rgba(255, 255, 255, 0.08);
+            /* Slightly lighter than background */
+            color: #ffffff;
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+            border: 1px solid rgba(41, 121, 255, 0.2);
+        }
 
-.chat-input {
-  display: flex;
-  padding: 15px;
-  border-top: 1px solid rgba(41, 121, 255, 0.2);
-  background: rgba(20, 28, 40, 0.95); /* Slightly darker than chat container */
-}
+        .chat-input {
+            display: flex;
+            padding: 15px;
+            border-top: 1px solid rgba(41, 121, 255, 0.2);
+            background: rgba(20, 28, 40, 0.95);
+            /* Slightly darker than chat container */
+        }
 
-.chat-input input {
-  flex: 1;
-  padding: 12px 15px;
-  border: 1px solid rgba(41, 121, 255, 0.3);
-  border-radius: 30px;
-  font-size: 14px;
-  background: rgba(30, 38, 50, 0.7);
-  color: #ffffff;
-}
+        .chat-input input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid rgba(41, 121, 255, 0.3);
+            border-radius: 30px;
+            font-size: 14px;
+            background: rgba(30, 38, 50, 0.7);
+            color: #ffffff;
+        }
 
-.chat-input input:focus {
-  outline: none;
-  border-color: #2979ff;
-  box-shadow: 0 0 0 2px rgba(41, 121, 255, 0.2);
-}
+        .chat-input input:focus {
+            outline: none;
+            border-color: #2979ff;
+            box-shadow: 0 0 0 2px rgba(41, 121, 255, 0.2);
+        }
 
-.chat-input input::placeholder {
-  color: rgba(255, 255, 255, 0.5);
-}
+        .chat-input input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
 
-.chat-input button {
-  background: #2979ff;
-  color: white;
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-left: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
+        .chat-input button {
+            background: #2979ff;
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
 
-.chat-input button:hover {
-  background: #75a7ff;
-  transform: translateY(-2px);
-}
+        .chat-input button:hover {
+            background: #75a7ff;
+            transform: translateY(-2px);
+        }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
 
-.typing-indicator {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-  align-self: flex-start;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 8px 15px;
-  border-radius: 18px;
-  border-bottom-left-radius: 4px;
-}
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-.typing-indicator span {
-  height: 8px;
-  width: 8px;
-  background: rgba(41, 121, 255, 0.7);
-  border-radius: 50%;
-  display: inline-block;
-  margin: 0 1px;
-  opacity: 0.8;
-}
+        .typing-indicator {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            align-self: flex-start;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 8px 15px;
+            border-radius: 18px;
+            border-bottom-left-radius: 4px;
+        }
 
-.typing-indicator span:nth-child(1) {
-  animation: typing 1s infinite 0s;
-}
+        .typing-indicator span {
+            height: 8px;
+            width: 8px;
+            background: rgba(41, 121, 255, 0.7);
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 1px;
+            opacity: 0.8;
+        }
 
-.typing-indicator span:nth-child(2) {
-  animation: typing 1s infinite 0.2s;
-}
+        .typing-indicator span:nth-child(1) {
+            animation: typing 1s infinite 0s;
+        }
 
-.typing-indicator span:nth-child(3) {
-  animation: typing 1s infinite 0.4s;
-}
+        .typing-indicator span:nth-child(2) {
+            animation: typing 1s infinite 0.2s;
+        }
 
-@keyframes typing {
-  0% {
-    transform: translateY(0);
-    opacity: 0.8;
-  }
-  50% {
-    transform: translateY(-5px);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 0.8;
-  }
-}
+        .typing-indicator span:nth-child(3) {
+            animation: typing 1s infinite 0.4s;
+        }
 
-/* Custom scrollbar for chat messages */
-.chat-messages::-webkit-scrollbar {
-  width: 6px;
-}
+        @keyframes typing {
+            0% {
+                transform: translateY(0);
+                opacity: 0.8;
+            }
 
-.chat-messages::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
-}
+            50% {
+                transform: translateY(-5px);
+                opacity: 1;
+            }
 
-.chat-messages::-webkit-scrollbar-thumb {
-  background: rgba(41, 121, 255, 0.5);
-  border-radius: 10px;
-}
+            100% {
+                transform: translateY(0);
+                opacity: 0.8;
+            }
+        }
 
-.chat-messages::-webkit-scrollbar-thumb:hover {
-  background: rgba(41, 121, 255, 0.7);
-}
+        /* Custom scrollbar for chat messages */
+        .chat-messages::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .chat-messages::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: rgba(41, 121, 255, 0.5);
+            border-radius: 10px;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb:hover {
+            background: rgba(41, 121, 255, 0.7);
+        }
 
 
-/* Add to your existing CSS */
-.bot-message p {
-  margin: 0 0 10px 0;
-}
+        /* Add to your existing CSS */
+        .bot-message p {
+            margin: 0 0 10px 0;
+        }
 
-.bot-message p:last-child {
-  margin-bottom: 0;
-}
+        .bot-message p:last-child {
+            margin-bottom: 0;
+        }
 
-.bot-message a {
-  color: #75a7ff;
-  text-decoration: underline;
-}
+        .bot-message a {
+            color: #75a7ff;
+            text-decoration: underline;
+        }
 
-.bot-message a:hover {
-  color: #2979ff;
-}
+        .bot-message a:hover {
+            color: #2979ff;
+        }
 
-.bot-message ul, .bot-message ol {
-  margin: 10px 0;
-  padding-left: 20px;
-}
+        .bot-message ul,
+        .bot-message ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
 
-.bot-message li {
-  margin-bottom: 5px;
-}
+        .bot-message li {
+            margin-bottom: 5px;
+        }
 
-/* Add this to your existing CSS */
+        /* Add this to your existing CSS */
 
-.preorder-link {
-  display: inline-block;
-  color: white !important;
-  background: linear-gradient(90deg, #2979ff, #1565c0);
-  padding: 8px 16px;
-  border-radius: 20px;
-  margin: 5px 0;
-  font-weight: 500;
-  text-decoration: none !important;
-  box-shadow: 0 2px 8px rgba(41, 121, 255, 0.4);
-  transition: all 0.3s ease;
-}
+        .preorder-link {
+            display: inline-block;
+            color: white !important;
+            background: linear-gradient(90deg, #2979ff, #1565c0);
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin: 5px 0;
+            font-weight: 500;
+            text-decoration: none !important;
+            box-shadow: 0 2px 8px rgba(41, 121, 255, 0.4);
+            transition: all 0.3s ease;
+        }
 
-.preorder-link:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(41, 121, 255, 0.6);
-  background: linear-gradient(90deg, #1565c0, #0d47a1);
-}
+        .preorder-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(41, 121, 255, 0.6);
+            background: linear-gradient(90deg, #1565c0, #0d47a1);
+        }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header id="header">
@@ -548,7 +574,7 @@
         </div>
 
         <h2>Notre Sélection</h2>
-        
+
         <div class="wine-gallery">
             <div class="wine-card" onclick="showDescription('pommard')">
                 <img src="ETA057419_HP POMMARD EN MAREAU 2023_MEB ME.png" alt="Pommard 2023" class="wine-image">
@@ -620,310 +646,382 @@
                 <img src="ETA057419V_HP CHOREY LES BEAUNE 2021_MEB ME.png" alt="Chablis 2023" class="wine-image">
             </div>
         </div>
-        
+
         <div id="pommard-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('pommard')">×</span>
                 <div class="wine-description-content">
-                    <img src="ETA057419_HP POMMARD EN MAREAU 2023_MEB ME.png" alt="Pommard 2023" class="wine-description-image">
+                    <img src="ETA057419_HP POMMARD EN MAREAU 2023_MEB ME.png" alt="Pommard 2023"
+                        class="wine-description-image">
                     <h3>Pommard Premier Cru 2023</h3>
-                    <p>Un vin d'une structure remarquable, alliant puissance et élégance. Les tanins soyeux soutiennent des arômes de fruits noirs et d'épices, révélant toute la noblesse de ce terroir d'exception.</p>
+                    <p>Un vin d'une structure remarquable, alliant puissance et élégance. Les tanins soyeux soutiennent
+                        des arômes de fruits noirs et d'épices, révélant toute la noblesse de ce terroir d'exception.
+                    </p>
                 </div>
             </div>
         </div>
-        
+
         <div id="chablis-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('chablis')">×</span>
                 <div class="wine-description-content">
-                    <img src="ETA057419V_HP CHOREY LES BEAUNE 2021_MEB ME.png" alt="Chablis 2023" class="wine-description-image">
+                    <img src="ETA057419V_HP CHOREY LES BEAUNE 2021_MEB ME.png" alt="Chablis 2023"
+                        class="wine-description-image">
                     <h3>Chablis Grand Cru 2023</h3>
-                    <p>La minéralité caractéristique du terroir de Chablis s'exprime pleinement dans ce millésime d'une précision remarquable. Notes d'agrumes et tension vibrante composent un ensemble d'une grande pureté.</p>
+                    <p>La minéralité caractéristique du terroir de Chablis s'exprime pleinement dans ce millésime d'une
+                        précision remarquable. Notes d'agrumes et tension vibrante composent un ensemble d'une grande
+                        pureté.</p>
                 </div>
             </div>
         </div>
-        
+
         <div id="saint-romain-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('saint-romain')">×</span>
                 <div class="wine-description-content">
-                    <img src="ETA057419_HP VOSNE ROMANEE 2022_MEB DD.png" alt="Saint-Romain 2023" class="wine-description-image">
+                    <img src="ETA057419_HP VOSNE ROMANEE 2022_MEB DD.png" alt="Saint-Romain 2023"
+                        class="wine-description-image">
                     <h3>Saint-Romain 2023</h3>
-                    <p>La révélation de l'année! Ce blanc d'une finesse aromatique surprenante offre un équilibre parfait entre fraîcheur citronnée et notes beurrées subtiles.</p>
+                    <p>La révélation de l'année! Ce blanc d'une finesse aromatique surprenante offre un équilibre
+                        parfait entre fraîcheur citronnée et notes beurrées subtiles.</p>
                 </div>
             </div>
         </div>
-        
+
         <div id="pommard-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('pommard')">×</span>
                 <div class="wine-description-content">
-                    <img src="ETA057419_HP POMMARD EN MAREAU 2023_MEB ME.png" alt="Pommard 2023" class="wine-description-image">
+                    <img src="ETA057419_HP POMMARD EN MAREAU 2023_MEB ME.png" alt="Pommard 2023"
+                        class="wine-description-image">
                     <h3>Pommard Premier Cru 2023</h3>
-                    <p>Un vin d'une structure remarquable, alliant puissance et élégance. Les tanins soyeux soutiennent des arômes de fruits noirs et d'épices, révélant toute la noblesse de ce terroir d'exception.</p>
+                    <p>Un vin d'une structure remarquable, alliant puissance et élégance. Les tanins soyeux soutiennent
+                        des arômes de fruits noirs et d'épices, révélant toute la noblesse de ce terroir d'exception.
+                    </p>
                 </div>
             </div>
         </div>
-        
+
         <div id="chablis-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('chablis')">×</span>
                 <div class="wine-description-content">
-                    <img src="ETA057419V_HP CHOREY LES BEAUNE 2021_MEB ME.png" alt="Chablis 2023" class="wine-description-image">
+                    <img src="ETA057419V_HP CHOREY LES BEAUNE 2021_MEB ME.png" alt="Chablis 2023"
+                        class="wine-description-image">
                     <h3>Chablis Grand Cru 2023</h3>
-                    <p>La minéralité caractéristique du terroir de Chablis s'exprime pleinement dans ce millésime d'une précision remarquable. Notes d'agrumes et tension vibrante composent un ensemble d'une grande pureté.</p>
+                    <p>La minéralité caractéristique du terroir de Chablis s'exprime pleinement dans ce millésime d'une
+                        précision remarquable. Notes d'agrumes et tension vibrante composent un ensemble d'une grande
+                        pureté.</p>
                 </div>
             </div>
         </div>
-        
+
         <div id="saint-romain-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('saint-romain')">×</span>
                 <div class="wine-description-content">
-                    <img src="ETA057419_HP VOSNE ROMANEE 2022_MEB DD.png" alt="Saint-Romain 2023" class="wine-description-image">
+                    <img src="ETA057419_HP VOSNE ROMANEE 2022_MEB DD.png" alt="Saint-Romain 2023"
+                        class="wine-description-image">
                     <h3>Saint-Romain 2023</h3>
-                    <p>La révélation de l'année! Ce blanc d'une finesse aromatique surprenante offre un équilibre parfait entre fraîcheur citronnée et notes beurrées subtiles.</p>
+                    <p>La révélation de l'année! Ce blanc d'une finesse aromatique surprenante offre un équilibre
+                        parfait entre fraîcheur citronnée et notes beurrées subtiles.</p>
                 </div>
             </div>
         </div>
-        
+
         <div id="pommard-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('pommard')">×</span>
                 <div class="wine-description-content">
-                    <img src="ETA057419_HP POMMARD EN MAREAU 2023_MEB ME.png" alt="Pommard 2023" class="wine-description-image">
+                    <img src="ETA057419_HP POMMARD EN MAREAU 2023_MEB ME.png" alt="Pommard 2023"
+                        class="wine-description-image">
                     <h3>Pommard Premier Cru 2023</h3>
-                    <p>Un vin d'une structure remarquable, alliant puissance et élégance. Les tanins soyeux soutiennent des arômes de fruits noirs et d'épices, révélant toute la noblesse de ce terroir d'exception.</p>
+                    <p>Un vin d'une structure remarquable, alliant puissance et élégance. Les tanins soyeux soutiennent
+                        des arômes de fruits noirs et d'épices, révélant toute la noblesse de ce terroir d'exception.
+                    </p>
                 </div>
             </div>
         </div>
-        
+
         <div id="chablis-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('chablis')">×</span>
                 <div class="wine-description-content">
-                    <img src="ETA057419V_HP CHOREY LES BEAUNE 2021_MEB ME.png" alt="Chablis 2023" class="wine-description-image">
+                    <img src="ETA057419V_HP CHOREY LES BEAUNE 2021_MEB ME.png" alt="Chablis 2023"
+                        class="wine-description-image">
                     <h3>Chablis Grand Cru 2023</h3>
-                    <p>La minéralité caractéristique du terroir de Chablis s'exprime pleinement dans ce millésime d'une précision remarquable. Notes d'agrumes et tension vibrante composent un ensemble d'une grande pureté.</p>
+                    <p>La minéralité caractéristique du terroir de Chablis s'exprime pleinement dans ce millésime d'une
+                        précision remarquable. Notes d'agrumes et tension vibrante composent un ensemble d'une grande
+                        pureté.</p>
                 </div>
             </div>
         </div>
-        
+
         <div id="saint-romain-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('saint-romain')">×</span>
                 <div class="wine-description-content">
-                    <img src="ETA057419_HP VOSNE ROMANEE 2022_MEB DD.png" alt="Saint-Romain 2023" class="wine-description-image">
+                    <img src="ETA057419_HP VOSNE ROMANEE 2022_MEB DD.png" alt="Saint-Romain 2023"
+                        class="wine-description-image">
                     <h3>Saint-Romain 2023</h3>
-                    <p>La révélation de l'année! Ce blanc d'une finesse aromatique surprenante offre un équilibre parfait entre fraîcheur citronnée et notes beurrées subtiles.</p>
+                    <p>La révélation de l'année! Ce blanc d'une finesse aromatique surprenante offre un équilibre
+                        parfait entre fraîcheur citronnée et notes beurrées subtiles.</p>
                 </div>
             </div>
         </div>
-        
+
         <div id="pommard-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('pommard')">×</span>
                 <div class="wine-description-content">
-                    <img src="ETA057419_HP POMMARD EN MAREAU 2023_MEB ME.png" alt="Pommard 2023" class="wine-description-image">
+                    <img src="ETA057419_HP POMMARD EN MAREAU 2023_MEB ME.png" alt="Pommard 2023"
+                        class="wine-description-image">
                     <h3>Pommard Premier Cru 2023</h3>
-                    <p>Un vin d'une structure remarquable, alliant puissance et élégance. Les tanins soyeux soutiennent des arômes de fruits noirs et d'épices, révélant toute la noblesse de ce terroir d'exception.</p>
+                    <p>Un vin d'une structure remarquable, alliant puissance et élégance. Les tanins soyeux soutiennent
+                        des arômes de fruits noirs et d'épices, révélant toute la noblesse de ce terroir d'exception.
+                    </p>
                 </div>
             </div>
         </div>
-        
+
         <div id="chablis-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('chablis')">×</span>
                 <div class="wine-description-content">
-                    <img src="ETA057419V_HP CHOREY LES BEAUNE 2021_MEB ME.png" alt="Chablis 2023" class="wine-description-image">
+                    <img src="ETA057419V_HP CHOREY LES BEAUNE 2021_MEB ME.png" alt="Chablis 2023"
+                        class="wine-description-image">
                     <h3>Chablis Grand Cru 2023</h3>
-                    <p>La minéralité caractéristique du terroir de Chablis s'exprime pleinement dans ce millésime d'une précision remarquable. Notes d'agrumes et tension vibrante composent un ensemble d'une grande pureté.</p>
+                    <p>La minéralité caractéristique du terroir de Chablis s'exprime pleinement dans ce millésime d'une
+                        précision remarquable. Notes d'agrumes et tension vibrante composent un ensemble d'une grande
+                        pureté.</p>
                 </div>
             </div>
         </div>
-        
+
         <div id="saint-romain-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('saint-romain')">×</span>
                 <div class="wine-description-content">
-                    <img src="ETA057419_HP VOSNE ROMANEE 2022_MEB DD.png" alt="Saint-Romain 2023" class="wine-description-image">
+                    <img src="ETA057419_HP VOSNE ROMANEE 2022_MEB DD.png" alt="Saint-Romain 2023"
+                        class="wine-description-image">
                     <h3>Saint-Romain 2023</h3>
-                    <p>La révélation de l'année! Ce blanc d'une finesse aromatique surprenante offre un équilibre parfait entre fraîcheur citronnée et notes beurrées subtiles.</p>
+                    <p>La révélation de l'année! Ce blanc d'une finesse aromatique surprenante offre un équilibre
+                        parfait entre fraîcheur citronnée et notes beurrées subtiles.</p>
                 </div>
             </div>
         </div>
-        
+
         <div id="pommard-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('pommard')">×</span>
                 <div class="wine-description-content">
-                    <img src="ETA057419_HP POMMARD EN MAREAU 2023_MEB ME.png" alt="Pommard 2023" class="wine-description-image">
+                    <img src="ETA057419_HP POMMARD EN MAREAU 2023_MEB ME.png" alt="Pommard 2023"
+                        class="wine-description-image">
                     <h3>Pommard Premier Cru 2023</h3>
-                    <p>Un vin d'une structure remarquable, alliant puissance et élégance. Les tanins soyeux soutiennent des arômes de fruits noirs et d'épices, révélant toute la noblesse de ce terroir d'exception.</p>
+                    <p>Un vin d'une structure remarquable, alliant puissance et élégance. Les tanins soyeux soutiennent
+                        des arômes de fruits noirs et d'épices, révélant toute la noblesse de ce terroir d'exception.
+                    </p>
                 </div>
             </div>
         </div>
-        
+
         <div id="chablis-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('chablis')">×</span>
                 <div class="wine-description-content">
-                    <img src="ETA057419V_HP CHOREY LES BEAUNE 2021_MEB ME.png" alt="Chablis 2023" class="wine-description-image">
+                    <img src="ETA057419V_HP CHOREY LES BEAUNE 2021_MEB ME.png" alt="Chablis 2023"
+                        class="wine-description-image">
                     <h3>Chablis Grand Cru 2023</h3>
-                    <p>La minéralité caractéristique du terroir de Chablis s'exprime pleinement dans ce millésime d'une précision remarquable. Notes d'agrumes et tension vibrante composent un ensemble d'une grande pureté.</p>
+                    <p>La minéralité caractéristique du terroir de Chablis s'exprime pleinement dans ce millésime d'une
+                        précision remarquable. Notes d'agrumes et tension vibrante composent un ensemble d'une grande
+                        pureté.</p>
                 </div>
             </div>
         </div>
-        
+
         <div id="saint-romain-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('saint-romain')">×</span>
                 <div class="wine-description-content">
-                    <img src="ETA057419_HP VOSNE ROMANEE 2022_MEB DD.png" alt="Saint-Romain 2023" class="wine-description-image">
+                    <img src="ETA057419_HP VOSNE ROMANEE 2022_MEB DD.png" alt="Saint-Romain 2023"
+                        class="wine-description-image">
                     <h3>Saint-Romain 2023</h3>
-                    <p>La révélation de l'année! Ce blanc d'une finesse aromatique surprenante offre un équilibre parfait entre fraîcheur citronnée et notes beurrées subtiles.</p>
+                    <p>La révélation de l'année! Ce blanc d'une finesse aromatique surprenante offre un équilibre
+                        parfait entre fraîcheur citronnée et notes beurrées subtiles.</p>
                 </div>
             </div>
         </div>
-        
+
         <div id="pommard-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('pommard')">×</span>
                 <div class="wine-description-content">
-                    <img src="ETA057419_HP POMMARD EN MAREAU 2023_MEB ME.png" alt="Pommard 2023" class="wine-description-image">
+                    <img src="ETA057419_HP POMMARD EN MAREAU 2023_MEB ME.png" alt="Pommard 2023"
+                        class="wine-description-image">
                     <h3>Pommard Premier Cru 2023</h3>
-                    <p>Un vin d'une structure remarquable, alliant puissance et élégance. Les tanins soyeux soutiennent des arômes de fruits noirs et d'épices, révélant toute la noblesse de ce terroir d'exception.</p>
+                    <p>Un vin d'une structure remarquable, alliant puissance et élégance. Les tanins soyeux soutiennent
+                        des arômes de fruits noirs et d'épices, révélant toute la noblesse de ce terroir d'exception.
+                    </p>
                 </div>
             </div>
         </div>
-        
+
         <div id="chablis-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('chablis')">×</span>
                 <div class="wine-description-content">
-                    <img src="ETA057419V_HP CHOREY LES BEAUNE 2021_MEB ME.png" alt="Chablis 2023" class="wine-description-image">
+                    <img src="ETA057419V_HP CHOREY LES BEAUNE 2021_MEB ME.png" alt="Chablis 2023"
+                        class="wine-description-image">
                     <h3>Chablis Grand Cru 2023</h3>
-                    <p>La minéralité caractéristique du terroir de Chablis s'exprime pleinement dans ce millésime d'une précision remarquable. Notes d'agrumes et tension vibrante composent un ensemble d'une grande pureté.</p>
+                    <p>La minéralité caractéristique du terroir de Chablis s'exprime pleinement dans ce millésime d'une
+                        précision remarquable. Notes d'agrumes et tension vibrante composent un ensemble d'une grande
+                        pureté.</p>
                 </div>
             </div>
         </div>
-        
+
         <div id="saint-romain-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('saint-romain')">×</span>
                 <div class="wine-description-content">
-                    <img src="ETA057419_HP VOSNE ROMANEE 2022_MEB DD.png" alt="Saint-Romain 2023" class="wine-description-image">
+                    <img src="ETA057419_HP VOSNE ROMANEE 2022_MEB DD.png" alt="Saint-Romain 2023"
+                        class="wine-description-image">
                     <h3>Saint-Romain 2023</h3>
-                    <p>La révélation de l'année! Ce blanc d'une finesse aromatique surprenante offre un équilibre parfait entre fraîcheur citronnée et notes beurrées subtiles.</p>
+                    <p>La révélation de l'année! Ce blanc d'une finesse aromatique surprenante offre un équilibre
+                        parfait entre fraîcheur citronnée et notes beurrées subtiles.</p>
                 </div>
             </div>
         </div>
-        
+
         <div id="pommard-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('pommard')">×</span>
                 <div class="wine-description-content">
-                    <img src="ETA057419_HP POMMARD EN MAREAU 2023_MEB ME.png" alt="Pommard 2023" class="wine-description-image">
+                    <img src="ETA057419_HP POMMARD EN MAREAU 2023_MEB ME.png" alt="Pommard 2023"
+                        class="wine-description-image">
                     <h3>Pommard Premier Cru 2023</h3>
-                    <p>Un vin d'une structure remarquable, alliant puissance et élégance. Les tanins soyeux soutiennent des arômes de fruits noirs et d'épices, révélant toute la noblesse de ce terroir d'exception.</p>
+                    <p>Un vin d'une structure remarquable, alliant puissance et élégance. Les tanins soyeux soutiennent
+                        des arômes de fruits noirs et d'épices, révélant toute la noblesse de ce terroir d'exception.
+                    </p>
                 </div>
             </div>
         </div>
-        
+
         <div id="chablis-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('chablis')">×</span>
                 <div class="wine-description-content">
-                    <img src="ETA057419V_HP CHOREY LES BEAUNE 2021_MEB ME.png" alt="Chablis 2023" class="wine-description-image">
+                    <img src="ETA057419V_HP CHOREY LES BEAUNE 2021_MEB ME.png" alt="Chablis 2023"
+                        class="wine-description-image">
                     <h3>Chablis Grand Cru 2023</h3>
-                    <p>La minéralité caractéristique du terroir de Chablis s'exprime pleinement dans ce millésime d'une précision remarquable. Notes d'agrumes et tension vibrante composent un ensemble d'une grande pureté.</p>
+                    <p>La minéralité caractéristique du terroir de Chablis s'exprime pleinement dans ce millésime d'une
+                        précision remarquable. Notes d'agrumes et tension vibrante composent un ensemble d'une grande
+                        pureté.</p>
                 </div>
             </div>
         </div>
-        
+
         <div id="saint-romain-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('saint-romain')">×</span>
                 <div class="wine-description-content">
-                    <img src="ETA057419_HP VOSNE ROMANEE 2022_MEB DD.png" alt="Saint-Romain 2023" class="wine-description-image">
+                    <img src="ETA057419_HP VOSNE ROMANEE 2022_MEB DD.png" alt="Saint-Romain 2023"
+                        class="wine-description-image">
                     <h3>Saint-Romain 2023</h3>
-                    <p>La révélation de l'année! Ce blanc d'une finesse aromatique surprenante offre un équilibre parfait entre fraîcheur citronnée et notes beurrées subtiles.</p>
+                    <p>La révélation de l'année! Ce blanc d'une finesse aromatique surprenante offre un équilibre
+                        parfait entre fraîcheur citronnée et notes beurrées subtiles.</p>
                 </div>
             </div>
         </div>
-        
+
         <div id="pommard-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('pommard')">×</span>
                 <div class="wine-description-content">
-                    <img src="ETA057419_HP POMMARD EN MAREAU 2023_MEB ME.png" alt="Pommard 2023" class="wine-description-image">
+                    <img src="ETA057419_HP POMMARD EN MAREAU 2023_MEB ME.png" alt="Pommard 2023"
+                        class="wine-description-image">
                     <h3>Pommard Premier Cru 2023</h3>
-                    <p>Un vin d'une structure remarquable, alliant puissance et élégance. Les tanins soyeux soutiennent des arômes de fruits noirs et d'épices, révélant toute la noblesse de ce terroir d'exception.</p>
+                    <p>Un vin d'une structure remarquable, alliant puissance et élégance. Les tanins soyeux soutiennent
+                        des arômes de fruits noirs et d'épices, révélant toute la noblesse de ce terroir d'exception.
+                    </p>
                 </div>
             </div>
         </div>
-        
+
         <div id="chablis-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('chablis')">×</span>
                 <div class="wine-description-content">
-                    <img src="ETA057419V_HP CHOREY LES BEAUNE 2021_MEB ME.png" alt="Chablis 2023" class="wine-description-image">
+                    <img src="ETA057419V_HP CHOREY LES BEAUNE 2021_MEB ME.png" alt="Chablis 2023"
+                        class="wine-description-image">
                     <h3>Chablis Grand Cru 2023</h3>
-                    <p>La minéralité caractéristique du terroir de Chablis s'exprime pleinement dans ce millésime d'une précision remarquable. Notes d'agrumes et tension vibrante composent un ensemble d'une grande pureté.</p>
+                    <p>La minéralité caractéristique du terroir de Chablis s'exprime pleinement dans ce millésime d'une
+                        précision remarquable. Notes d'agrumes et tension vibrante composent un ensemble d'une grande
+                        pureté.</p>
                 </div>
             </div>
         </div>
-        
+
         <div id="saint-romain-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('saint-romain')">×</span>
                 <div class="wine-description-content">
-                    <img src="ETA057419_HP VOSNE ROMANEE 2022_MEB DD.png" alt="Saint-Romain 2023" class="wine-description-image">
+                    <img src="ETA057419_HP VOSNE ROMANEE 2022_MEB DD.png" alt="Saint-Romain 2023"
+                        class="wine-description-image">
                     <h3>Saint-Romain 2023</h3>
-                    <p>La révélation de l'année! Ce blanc d'une finesse aromatique surprenante offre un équilibre parfait entre fraîcheur citronnée et notes beurrées subtiles.</p>
+                    <p>La révélation de l'année! Ce blanc d'une finesse aromatique surprenante offre un équilibre
+                        parfait entre fraîcheur citronnée et notes beurrées subtiles.</p>
                 </div>
             </div>
         </div>
-        
+
         <div id="pommard-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('pommard')">×</span>
                 <div class="wine-description-content">
-                    <img src="ETA057419_HP POMMARD EN MAREAU 2023_MEB ME.png" alt="Pommard 2023" class="wine-description-image">
+                    <img src="ETA057419_HP POMMARD EN MAREAU 2023_MEB ME.png" alt="Pommard 2023"
+                        class="wine-description-image">
                     <h3>Pommard Premier Cru 2023</h3>
-                    <p>Un vin d'une structure remarquable, alliant puissance et élégance. Les tanins soyeux soutiennent des arômes de fruits noirs et d'épices, révélant toute la noblesse de ce terroir d'exception.</p>
+                    <p>Un vin d'une structure remarquable, alliant puissance et élégance. Les tanins soyeux soutiennent
+                        des arômes de fruits noirs et d'épices, révélant toute la noblesse de ce terroir d'exception.
+                    </p>
                 </div>
             </div>
         </div>
-        
+
         <div id="chablis-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('chablis')">×</span>
                 <div class="wine-description-content">
-                    <img src="ETA057419V_HP CHOREY LES BEAUNE 2021_MEB ME.png" alt="Chablis 2023" class="wine-description-image">
+                    <img src="ETA057419V_HP CHOREY LES BEAUNE 2021_MEB ME.png" alt="Chablis 2023"
+                        class="wine-description-image">
                     <h3>Chablis Grand Cru 2023</h3>
-                    <p>La minéralité caractéristique du terroir de Chablis s'exprime pleinement dans ce millésime d'une précision remarquable. Notes d'agrumes et tension vibrante composent un ensemble d'une grande pureté.</p>
+                    <p>La minéralité caractéristique du terroir de Chablis s'exprime pleinement dans ce millésime d'une
+                        précision remarquable. Notes d'agrumes et tension vibrante composent un ensemble d'une grande
+                        pureté.</p>
                 </div>
             </div>
         </div>
-        
+
         <div id="saint-romain-description" class="wine-description">
             <div class="wine-description-inner">
                 <span class="close-btn" onclick="closeDescription('saint-romain')">×</span>
                 <div class="wine-description-content">
-                    <img src="ETA057419_HP VOSNE ROMANEE 2022_MEB DD.png" alt="Saint-Romain 2023" class="wine-description-image">
+                    <img src="ETA057419_HP VOSNE ROMANEE 2022_MEB DD.png" alt="Saint-Romain 2023"
+                        class="wine-description-image">
                     <h3>Saint-Romain 2023</h3>
-                    <p>La révélation de l'année! Ce blanc d'une finesse aromatique surprenante offre un équilibre parfait entre fraîcheur citronnée et notes beurrées subtiles.</p>
+                    <p>La révélation de l'année! Ce blanc d'une finesse aromatique surprenante offre un équilibre
+                        parfait entre fraîcheur citronnée et notes beurrées subtiles.</p>
                 </div>
             </div>
         </div>
-        
-        
-        </div>
+
+
+    </div>
 
     <script>
         // Pour gérer l'effet de scroll sur le header
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const header = document.getElementById('header');
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');
@@ -931,17 +1029,17 @@
                 header.classList.remove('scrolled');
             }
         });
-        
+
         // Afficher la description du vin avec image
         function showDescription(wine) {
             const descElement = document.getElementById(wine + '-description');
             descElement.classList.add('active');
-            
+
             // Empêcher le défilement du contenu en arrière-plan
             document.body.style.overflow = 'hidden';
-            
+
             // Fermer en cliquant en dehors du contenu
-            descElement.addEventListener('click', function(e) {
+            descElement.addEventListener('click', function (e) {
                 if (e.target === descElement) {
                     closeDescription(wine);
                 }
@@ -951,35 +1049,35 @@
         function closeDescription(wine) {
             const descElement = document.getElementById(wine + '-description');
             descElement.classList.remove('active');
-            
+
             // Restaurer le défilement
             document.body.style.overflow = 'auto';
         }
     </script>
-            <!-- Chat Widget -->
-<div class="chat-widget">
-    <div class="chat-button" id="chat-button">
-      <i class="fas fa-comment"></i>
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <div class="chat-button" id="chat-button">
+            <i class="fas fa-comment"></i>
+        </div>
+        <div class="chat-container" id="chat-container">
+            <div class="chat-header">
+                <h3>Gary</h3>
+                <button class="close-chat" id="close-chat"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <div class="message bot-message">
+                    👋 Hi there! I'm Gary here to help you.
+                </div>
+
+            </div>
+            <div class="chat-input">
+                <input type="text" id="user-input" placeholder="Ask Gary about Wines...">
+                <button id="send-button">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
     </div>
-    <div class="chat-container" id="chat-container">
-      <div class="chat-header">
-        <h3>Gary</h3>
-        <button class="close-chat" id="close-chat"><i class="fas fa-times"></i></button>
-      </div>
-      <div class="chat-messages" id="chat-messages">
-       <div class="message bot-message">
-        👋 Hi there! I'm Gary here to help you.
-       </div>
-  
-      </div>
-      <div class="chat-input">
-        <input type="text" id="user-input" placeholder="Ask Gary about Wines...">
-        <button id="send-button">
-          <i class="fas fa-paper-plane"></i>
-        </button>
-      </div>
-    </div>
-  </div>
 
     <script>
         // Smooth scroll
@@ -1058,218 +1156,204 @@
     </script>
     <script>
         // Chat functionality
-        document.addEventListener('DOMContentLoaded', function() {
-          const chatButton = document.getElementById('chat-button');
-          const chatContainer = document.getElementById('chat-container');
-          const closeChat = document.getElementById('close-chat');
-          const sendButton = document.getElementById('send-button');
-          const userInput = document.getElementById('user-input');
-          const chatMessages = document.getElementById('chat-messages');
-          
-          // Store conversation history
-          let conversationHistory = [];
-          
-          // Open chat window when button is clicked
-          chatButton.addEventListener('click', () => {
-            chatContainer.classList.add('active');
-          });
-          
-          // Close chat window
-          closeChat.addEventListener('click', () => {
-            chatContainer.classList.remove('active');
-          });
-          
-          // Send message function
-          async function sendMessage() {
-            const message = userInput.value.trim();
-            if (!message) return;
-            
-            // Add user message to chat
-            addMessage('user', message, false);
-            userInput.value = '';
-            
-            // Add to conversation history
-            conversationHistory.push({
-              role: 'user',
-              content: message
+        document.addEventListener('DOMContentLoaded', function () {
+            const chatButton = document.getElementById('chat-button');
+            const chatContainer = document.getElementById('chat-container');
+            const closeChat = document.getElementById('close-chat');
+            const sendButton = document.getElementById('send-button');
+            const userInput = document.getElementById('user-input');
+            const chatMessages = document.getElementById('chat-messages');
+
+            // Store conversation history
+            let conversationHistory = [];
+
+            // Open chat window when button is clicked
+            chatButton.addEventListener('click', () => {
+                chatContainer.classList.add('active');
             });
-            
-            // Show typing indicator
-            showTypingIndicator();
-            
-            try {
-              // Call your Vercel API route
-              const response = await fetch('/api/chat', {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                  message: message,
-                  history: conversationHistory
-                })
-              });
-              
-              if (!response.ok) {
-                throw new Error(`API error: ${response.status}`);
-              }
-              
-              const data = await response.json();
-              
-              // Add to conversation history
-              conversationHistory.push({
-                role: 'assistant',
-                content: data.response
-              });
-              
-              // Remove typing indicator and display response
-              removeTypingIndicator();
-              addMessage('bot', data.response, true);
-              
-            } catch (error) {
-              console.error('Error:', error);
-              removeTypingIndicator();
-              addMessage('bot', 'I apologize, but I encountered an error. Please try again.', false);
-            }
-          }
-          
-          // Add message to chat
-          function addMessage(sender, text, withTypingEffect = false) {
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `message ${sender}-message`;
-            
-            if (withTypingEffect) {
-              // Format the text with proper paragraphs and links
-              const formattedText = formatMessageText(text);
-              
-              // Add empty paragraph to start with
-              messageDiv.innerHTML = '';
-              chatMessages.appendChild(messageDiv);
-              
-              // Apply typing effect
-              typeMessage(messageDiv, formattedText, 0, 10);
-            } else {
-              // For user messages or error messages, display immediately
-              messageDiv.textContent = text;
-              chatMessages.appendChild(messageDiv);
-            }
-            
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-          }
-          
-      // Format message text for better readability and make links clickable
-      function formatMessageText(text) {
-        // First, escape any HTML (security measure)
-        text = escapeHtml(text);
-        
-        // Replace URLs with clickable links but exclude trailing punctuation
-        text = text.replace(
-          /(https?:\/\/[^\s]+?)([.,;:!?])?(\s|$)/g, 
-          function(match, url, punctuation, trailing) {
-            return '<a href="' + url + '" target="_blank" rel="noopener noreferrer">' + url + '</a>' + (punctuation || '') + trailing;
-          }
-        );
-        
-        // Specific handling for the cave link to make it more visible
-        text = text.replace(
-          /<a href="https:\/\/edgardesplot\.com\/cave\.html"([^>]+)>https:\/\/edgardesplot\.com\/cave\.html<\/a>/g,
-          '<a href="https://edgardesplot.com/cave.html"$1 class="Nos Vins">Nos Vins</a>'
-        );
-        
-        // Replace line breaks with <br> tags
-        text = text.replace(/\n/g, '<br>');
-        
-        // Add paragraph breaks for better readability
-        text = text.replace(/<br><br>/g, '</p><p>');
-        
-        // Wrap in paragraph tags if not already
-        if (!text.startsWith('<p>')) {
-          text = '<p>' + text;
-        }
-        if (!text.endsWith('</p>')) {
-          text = text + '</p>';
-        }
-        
-        return text;
-      }
-      
-          
-          // Helper function to escape HTML
-          function escapeHtml(text) {
-            const div = document.createElement('div');
-            div.textContent = text;
-            return div.innerHTML;
-          }
-          
-          // Typing effect function
-          function typeMessage(element, text, index, speed) {
-            if (index < text.length) {
-              element.innerHTML = text.substring(0, index + 1);
-              chatMessages.scrollTop = chatMessages.scrollHeight;
-              
-              // Handle HTML tags so they don't disrupt the typing effect
-              if (text.charAt(index) === '<') {
-                // Find the closing bracket of the tag
-                const closeIndex = text.indexOf('>', index);
-                if (closeIndex !== -1) {
-                  // Skip to after the tag
-                  index = closeIndex;
+
+            // Close chat window
+            closeChat.addEventListener('click', () => {
+                chatContainer.classList.remove('active');
+            });
+
+            // Send message function
+            async function sendMessage() {
+                const message = userInput.value.trim();
+                if (!message) return;
+
+                // Add user message to chat
+                addMessage('user', message, false);
+                userInput.value = '';
+
+                // Add to conversation history
+                conversationHistory.push({
+                    role: 'user',
+                    content: message
+                });
+
+                // Show typing indicator
+                showTypingIndicator();
+
+                try {
+                    // Call your Vercel API route
+                    const response = await fetch('/api/chat', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            message: message,
+                            history: conversationHistory
+                        })
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`API error: ${response.status}`);
+                    }
+
+                    const data = await response.json();
+
+                    // Add to conversation history
+                    conversationHistory.push({
+                        role: 'assistant',
+                        content: data.response
+                    });
+
+                    // Remove typing indicator and display response
+                    removeTypingIndicator();
+                    addMessage('bot', data.response, true);
+
+                } catch (error) {
+                    console.error('Error:', error);
+                    removeTypingIndicator();
+                    addMessage('bot', 'I apologize, but I encountered an error. Please try again.', false);
                 }
-              }
-              
-              setTimeout(function() {
-                typeMessage(element, text, index + 1, speed);
-              }, speed);
             }
-          }
-          
-          // Show typing indicator
-          function showTypingIndicator() {
-            const indicatorDiv = document.createElement('div');
-            indicatorDiv.className = 'typing-indicator';
-            indicatorDiv.innerHTML = '<span></span><span></span><span></span>';
-            indicatorDiv.id = 'typing-indicator';
-            chatMessages.appendChild(indicatorDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-          }
-          
-          // Remove typing indicator
-          function removeTypingIndicator() {
-            const indicator = document.getElementById('typing-indicator');
-            if (indicator) {
-              indicator.remove();
+
+            // Add message to chat
+            function addMessage(sender, text, withTypingEffect = false) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${sender}-message`;
+
+                if (withTypingEffect) {
+                    // Format the text with proper paragraphs and links
+                    const formattedText = formatMessageText(text);
+
+                    // Add empty paragraph to start with
+                    messageDiv.innerHTML = '';
+                    chatMessages.appendChild(messageDiv);
+
+                    // Apply typing effect
+                    typeMessage(messageDiv, formattedText, 0, 10);
+                } else {
+                    // For user messages or error messages, display immediately
+                    messageDiv.textContent = text;
+                    chatMessages.appendChild(messageDiv);
+                }
+
+                chatMessages.scrollTop = chatMessages.scrollHeight;
             }
-          }
-          
-          // Event listeners
-          sendButton.addEventListener('click', sendMessage);
-          
-          userInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-              sendMessage();
+
+            // Format message text for better readability and make links clickable
+            function formatMessageText(text) {
+                // First, escape any HTML (security measure)
+                text = escapeHtml(text);
+
+                // Replace URLs with clickable links but exclude trailing punctuation
+                text = text.replace(
+                    /(https?:\/\/[^\s]+?)([.,;:!?])?(\s|$)/g,
+                    function (match, url, punctuation, trailing) {
+                        return '<a href="' + url + '" target="_blank" rel="noopener noreferrer">' + url + '</a>' + (punctuation || '') + trailing;
+                    }
+                );
+
+                // Specific handling for the cave link to make it more visible
+                text = text.replace(
+                    /<a href="https:\/\/edgardesplot\.com\/cave\.html"([^>]+)>https:\/\/edgardesplot\.com\/cave\.html<\/a>/g,
+                    '<a href="https://edgardesplot.com/cave.html"$1 class="Nos Vins">Nos Vins</a>'
+                );
+
+                // Replace line breaks with <br> tags
+                text = text.replace(/\n/g, '<br>');
+
+                // Add paragraph breaks for better readability
+                text = text.replace(/<br><br>/g, '</p><p>');
+
+                // Wrap in paragraph tags if not already
+                if (!text.startsWith('<p>')) {
+                    text = '<p>' + text;
+                }
+                if (!text.endsWith('</p>')) {
+                    text = text + '</p>';
+                }
+
+                return text;
             }
-          });
+
+
+            // Helper function to escape HTML
+            function escapeHtml(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
+
+            // Typing effect function
+            function typeMessage(element, text, index, speed) {
+                if (index < text.length) {
+                    element.innerHTML = text.substring(0, index + 1);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+                    // Handle HTML tags so they don't disrupt the typing effect
+                    if (text.charAt(index) === '<') {
+                        // Find the closing bracket of the tag
+                        const closeIndex = text.indexOf('>', index);
+                        if (closeIndex !== -1) {
+                            // Skip to after the tag
+                            index = closeIndex;
+                        }
+                    }
+
+                    setTimeout(function () {
+                        typeMessage(element, text, index + 1, speed);
+                    }, speed);
+                }
+            }
+
+            // Show typing indicator
+            function showTypingIndicator() {
+                const indicatorDiv = document.createElement('div');
+                indicatorDiv.className = 'typing-indicator';
+                indicatorDiv.innerHTML = '<span></span><span></span><span></span>';
+                indicatorDiv.id = 'typing-indicator';
+                chatMessages.appendChild(indicatorDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            // Remove typing indicator
+            function removeTypingIndicator() {
+                const indicator = document.getElementById('typing-indicator');
+                if (indicator) {
+                    indicator.remove();
+                }
+            }
+
+            // Event listeners
+            sendButton.addEventListener('click', sendMessage);
+
+            userInput.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
         });
-      </script>
+    </script>
 </body>
+
 </html>
 
 
 <div class="gtranslate_wrapper"></div>
-<script>window.gtranslateSettings = {"default_language":"fr","native_language_names":true,"detect_browser_language":true,"languages":["fr","it","es","de","ar","iw","ru","ja","zh-CN","ko","en"],"globe_color":"#66aaff","wrapper_selector":".gtranslate_wrapper","horizontal_position":"right","vertical_position":"bottom","alt_flags":{"en":"usa"},"globe_size":40}</script>
+<script>window.gtranslateSettings = { "default_language": "fr", "native_language_names": true, "detect_browser_language": true, "languages": ["fr", "it", "es", "de", "ar", "iw", "ru", "ja", "zh-CN", "ko", "en"], "globe_color": "#66aaff", "wrapper_selector": ".gtranslate_wrapper", "horizontal_position": "right", "vertical_position": "bottom", "alt_flags": { "en": "usa" }, "globe_size": 40 }</script>
 <script src="https://cdn.gtranslate.net/widgets/latest/globe.js" defer></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
