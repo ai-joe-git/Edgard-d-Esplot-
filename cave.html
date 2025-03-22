@@ -33,7 +33,7 @@
 
         .header-content {
             display: flex;
-            justify-content: center; /* Centre le logo */
+            justify-content: center;
             align-items: center;
         }
 
@@ -44,19 +44,19 @@
         }
 
         .logo-img {
-            height: 120px; /* Taille du logo doublée */
-            transition: all 0.4s ease; /* Transition douce pour le redimensionnement */
+            height: 120px;
+            transition: all 0.4s ease;
         }
 
         header.scrolled .logo-img {
-            height: 60px; /* Taille réduite lors du défilement */
+            height: 60px;
         }
 
         .main-content {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            padding-top: 160px; /* Ajusté pour le logo plus grand */
+            padding-top: 160px;
         }
         
         .video-container {
@@ -111,13 +111,13 @@
             z-index: 1000;
             justify-content: center;
             align-items: center;
-            opacity: 0; /* Pour l'effet de fondu */
-            transition: opacity 0.3s ease; /* Animation fluide */
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
         
         .wine-description.active {
-            display: flex; /* Affiche la popup */
-            opacity: 1; /* Rétablit l'opacité */
+            display: flex;
+            opacity: 1;
         }
         
         .wine-description-inner {
@@ -285,11 +285,6 @@
         function closeDescription(wine) {
             const descElement = document.getElementById(wine + '-description');
             descElement.classList.remove('active');
-            
-            // Attendre la fin de l'animation avant de cacher complètement
-            setTimeout(() => {
-                descElement.style.display = 'none';
-            }, 300);
             
             // Restaurer le défilement
             document.body.style.overflow = 'auto';
