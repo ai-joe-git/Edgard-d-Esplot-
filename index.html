@@ -808,6 +808,290 @@
                 height: 300px;
             }
         }
+
+        /* Chat Widget - MINEO Dark Theme */
+.chat-widget {
+  position: fixed;
+  bottom: 20px;
+  left: 20px; /* Positioned at bottom left */
+  z-index: 1000;
+  font-family: 'Inter', sans-serif;
+  display: block; /* Always visible */
+}
+
+.chat-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--accent); /* Using MINEO's accent blue */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(41, 121, 255, 0.4);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(41, 121, 255, 0.3);
+}
+
+.chat-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(41, 121, 255, 0.5);
+}
+
+.chat-container {
+  position: absolute;
+  bottom: 80px;
+  left: 0; /* Aligned with the chat button */
+  width: 350px;
+  height: 500px;
+  background: rgba(30, 38, 50, 0.95); /* Darker, more opaque background */
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform-origin: bottom left;
+  transform: scale(0);
+  opacity: 0;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(41, 121, 255, 0.2);
+}
+
+.chat-container.active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.chat-header {
+  padding: 15px 20px;
+  background: linear-gradient(90deg, #2979ff, #1565c0); /* Gradient header */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.close-chat {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  margin-bottom: 15px;
+  padding: 12px 15px;
+  border-radius: 18px;
+  max-width: 85%;
+  line-height: 1.5;
+  font-size: 14px;
+  word-wrap: break-word;
+  animation: fadeIn 0.3s ease;
+}
+
+.user-message {
+  background: #2979ff; /* MINEO accent blue */
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+.bot-message {
+  background: rgba(255, 255, 255, 0.08); /* Slightly lighter than background */
+  color: #ffffff;
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+  border: 1px solid rgba(41, 121, 255, 0.2);
+}
+
+.chat-input {
+  display: flex;
+  padding: 15px;
+  border-top: 1px solid rgba(41, 121, 255, 0.2);
+  background: rgba(20, 28, 40, 0.95); /* Slightly darker than chat container */
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 1px solid rgba(41, 121, 255, 0.3);
+  border-radius: 30px;
+  font-size: 14px;
+  background: rgba(30, 38, 50, 0.7);
+  color: #ffffff;
+}
+
+.chat-input input:focus {
+  outline: none;
+  border-color: #2979ff;
+  box-shadow: 0 0 0 2px rgba(41, 121, 255, 0.2);
+}
+
+.chat-input input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.chat-input button {
+  background: #2979ff;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.chat-input button:hover {
+  background: #75a7ff;
+  transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 8px 15px;
+  border-radius: 18px;
+  border-bottom-left-radius: 4px;
+}
+
+.typing-indicator span {
+  height: 8px;
+  width: 8px;
+  background: rgba(41, 121, 255, 0.7);
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 1px;
+  opacity: 0.8;
+}
+
+.typing-indicator span:nth-child(1) {
+  animation: typing 1s infinite 0s;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation: typing 1s infinite 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation: typing 1s infinite 0.4s;
+}
+
+@keyframes typing {
+  0% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-5px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+}
+
+/* Custom scrollbar for chat messages */
+.chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: rgba(41, 121, 255, 0.5);
+  border-radius: 10px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+  background: rgba(41, 121, 255, 0.7);
+}
+
+
+/* Add to your existing CSS */
+.bot-message p {
+  margin: 0 0 10px 0;
+}
+
+.bot-message p:last-child {
+  margin-bottom: 0;
+}
+
+.bot-message a {
+  color: #75a7ff;
+  text-decoration: underline;
+}
+
+.bot-message a:hover {
+  color: #2979ff;
+}
+
+.bot-message ul, .bot-message ol {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.bot-message li {
+  margin-bottom: 5px;
+}
+
+/* Add this to your existing CSS */
+
+.preorder-link {
+  display: inline-block;
+  color: white !important;
+  background: linear-gradient(90deg, #2979ff, #1565c0);
+  padding: 8px 16px;
+  border-radius: 20px;
+  margin: 5px 0;
+  font-weight: 500;
+  text-decoration: none !important;
+  box-shadow: 0 2px 8px rgba(41, 121, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.preorder-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(41, 121, 255, 0.6);
+  background: linear-gradient(90deg, #1565c0, #0d47a1);
+}
+
     </style>
 </head>
 
@@ -1164,6 +1448,31 @@
         </div>
     </footer>
 
+        <!-- Chat Widget -->
+<div class="chat-widget">
+    <div class="chat-button" id="chat-button">
+      <i class="fas fa-comment"></i>
+    </div>
+    <div class="chat-container" id="chat-container">
+      <div class="chat-header">
+        <h3>Gary</h3>
+        <button class="close-chat" id="close-chat"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="chat-messages" id="chat-messages">
+       <div class="message bot-message">
+        👋 Hi there! I'm Gary here to help you.
+       </div>
+  
+      </div>
+      <div class="chat-input">
+        <input type="text" id="user-input" placeholder="Ask Gary about Wines...">
+        <button id="send-button">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
     <script>
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1239,6 +1548,201 @@
         // Start the image slider
         window.addEventListener('load', slideImages);
     </script>
+    <script>
+        // Chat functionality
+        document.addEventListener('DOMContentLoaded', function() {
+          const chatButton = document.getElementById('chat-button');
+          const chatContainer = document.getElementById('chat-container');
+          const closeChat = document.getElementById('close-chat');
+          const sendButton = document.getElementById('send-button');
+          const userInput = document.getElementById('user-input');
+          const chatMessages = document.getElementById('chat-messages');
+          
+          // Store conversation history
+          let conversationHistory = [];
+          
+          // Open chat window when button is clicked
+          chatButton.addEventListener('click', () => {
+            chatContainer.classList.add('active');
+          });
+          
+          // Close chat window
+          closeChat.addEventListener('click', () => {
+            chatContainer.classList.remove('active');
+          });
+          
+          // Send message function
+          async function sendMessage() {
+            const message = userInput.value.trim();
+            if (!message) return;
+            
+            // Add user message to chat
+            addMessage('user', message, false);
+            userInput.value = '';
+            
+            // Add to conversation history
+            conversationHistory.push({
+              role: 'user',
+              content: message
+            });
+            
+            // Show typing indicator
+            showTypingIndicator();
+            
+            try {
+              // Call your Vercel API route
+              const response = await fetch('/api/chat', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                  message: message,
+                  history: conversationHistory
+                })
+              });
+              
+              if (!response.ok) {
+                throw new Error(`API error: ${response.status}`);
+              }
+              
+              const data = await response.json();
+              
+              // Add to conversation history
+              conversationHistory.push({
+                role: 'assistant',
+                content: data.response
+              });
+              
+              // Remove typing indicator and display response
+              removeTypingIndicator();
+              addMessage('bot', data.response, true);
+              
+            } catch (error) {
+              console.error('Error:', error);
+              removeTypingIndicator();
+              addMessage('bot', 'I apologize, but I encountered an error. Please try again.', false);
+            }
+          }
+          
+          // Add message to chat
+          function addMessage(sender, text, withTypingEffect = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}-message`;
+            
+            if (withTypingEffect) {
+              // Format the text with proper paragraphs and links
+              const formattedText = formatMessageText(text);
+              
+              // Add empty paragraph to start with
+              messageDiv.innerHTML = '';
+              chatMessages.appendChild(messageDiv);
+              
+              // Apply typing effect
+              typeMessage(messageDiv, formattedText, 0, 10);
+            } else {
+              // For user messages or error messages, display immediately
+              messageDiv.textContent = text;
+              chatMessages.appendChild(messageDiv);
+            }
+            
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+          }
+          
+      // Format message text for better readability and make links clickable
+      function formatMessageText(text) {
+        // First, escape any HTML (security measure)
+        text = escapeHtml(text);
+        
+        // Replace URLs with clickable links but exclude trailing punctuation
+        text = text.replace(
+          /(https?:\/\/[^\s]+?)([.,;:!?])?(\s|$)/g, 
+          function(match, url, punctuation, trailing) {
+            return '<a href="' + url + '" target="_blank" rel="noopener noreferrer">' + url + '</a>' + (punctuation || '') + trailing;
+          }
+        );
+        
+        // Specific handling for the cave link to make it more visible
+        text = text.replace(
+          /<a href="https:\/\/edgardesplot\.com\/cave\.html"([^>]+)>https:\/\/edgardesplot\.com\/cave\.html<\/a>/g,
+          '<a href="https://edgardesplot.com/cave.html"$1 class="Nos Vins">Nos Vins</a>'
+        );
+        
+        // Replace line breaks with <br> tags
+        text = text.replace(/\n/g, '<br>');
+        
+        // Add paragraph breaks for better readability
+        text = text.replace(/<br><br>/g, '</p><p>');
+        
+        // Wrap in paragraph tags if not already
+        if (!text.startsWith('<p>')) {
+          text = '<p>' + text;
+        }
+        if (!text.endsWith('</p>')) {
+          text = text + '</p>';
+        }
+        
+        return text;
+      }
+      
+          
+          // Helper function to escape HTML
+          function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+          }
+          
+          // Typing effect function
+          function typeMessage(element, text, index, speed) {
+            if (index < text.length) {
+              element.innerHTML = text.substring(0, index + 1);
+              chatMessages.scrollTop = chatMessages.scrollHeight;
+              
+              // Handle HTML tags so they don't disrupt the typing effect
+              if (text.charAt(index) === '<') {
+                // Find the closing bracket of the tag
+                const closeIndex = text.indexOf('>', index);
+                if (closeIndex !== -1) {
+                  // Skip to after the tag
+                  index = closeIndex;
+                }
+              }
+              
+              setTimeout(function() {
+                typeMessage(element, text, index + 1, speed);
+              }, speed);
+            }
+          }
+          
+          // Show typing indicator
+          function showTypingIndicator() {
+            const indicatorDiv = document.createElement('div');
+            indicatorDiv.className = 'typing-indicator';
+            indicatorDiv.innerHTML = '<span></span><span></span><span></span>';
+            indicatorDiv.id = 'typing-indicator';
+            chatMessages.appendChild(indicatorDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+          }
+          
+          // Remove typing indicator
+          function removeTypingIndicator() {
+            const indicator = document.getElementById('typing-indicator');
+            if (indicator) {
+              indicator.remove();
+            }
+          }
+          
+          // Event listeners
+          sendButton.addEventListener('click', sendMessage);
+          
+          userInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+              sendMessage();
+            }
+          });
+        });
+      </script>
 </body>
 
 </html>
