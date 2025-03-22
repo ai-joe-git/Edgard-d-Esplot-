@@ -1,0 +1,48 @@
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="wine-gallery">
+            <div class="wine-card" onclick="showDescription('pommard')">
+                <img src="ETA057419_HP POMMARD EN MAREAU 2023_MEB ME.png" alt="Pommard 2023" class="wine-image">
+            </div>
+            <div class="wine-card" onclick="showDescription('chablis')">
+                <img src="ETA057419V_HP CHOREY LES BEAUNE 2021_MEB ME.png" alt="Chablis 2023" class="wine-image">
+            </div>
+            <div class="wine-card" onclick="showDescription('saint-romain')">
+                <img src="ETA057419_HP VOSNE ROMANEE 2022_MEB DD.png" alt="Saint-Romain 2023" class="wine-image">
+            </div>
+        </div>
+
+        <!-- Wine Descriptions -->
+        <div id="pommard-description" class="wine-description">
+            <div class="wine-description-inner">
+                <span class="close-btn" onclick="closeDescription('pommard')">×</span>
+                <div class="wine-description-content">
+                    <img src="ETA057419_HP POMMARD EN MAREAU 2023_MEB ME.png" alt="Pommard 2023" class="wine-description-image">
+                    <h3>Pommard Premier Cru 2023</h3>
+                    <p>Un vin d'une structure remarquable, alliant puissance et élégance. Les tanins soyeux soutiennent des arômes de fruits noirs et d'épices, révélant toute la noblesse de ce terroir d'exception.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="chablis-description" class="wine-description">
+            <div class="wine-description-inner">
+                <span class="close-btn" onclick="closeDescription('chablis')">×</span>
+                <div class="wine-description-content">
+                    <img src="ETA057419V_HP CHOREY LES BEAUNE 2021_MEB ME.png" alt="Chablis 2023" class="wine-description-image">
+                    <h3>Chablis Grand Cru 2023</h3>
+                    <p>La minéralité caractéristique du terroir de Chablis s'exprime pleinement dans ce millésime d'une précision remarquable. Notes d'agrumes et tension vibrante composent un ensemble d'une grande pureté.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="saint-romain-description" class="wine-description">
+            <div class="wine-description-inner">
+                <span class="close-btn" onclick="closeDescription('saint-romain')">×</span>
+                <div class="wine-description-content">
+                    <img src="ETA057419_HP VOSNE ROMANEE 2022_MEB DD.png" alt="Saint-Romain 2023" class="wine-description-image">
+                    <h3>Saint-Romain 2023</h3>
+                    <p>La révélation de l'année! Ce blanc d'une finesse aromatique surprenante offre un équilibre parfait entre fraîcheur citronnée et notes beurrées subtiles.</p>
+                </div>
+            </div>
+        </div>
+    </div>
